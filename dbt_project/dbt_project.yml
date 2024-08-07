@@ -1,0 +1,22 @@
+name: 'prazos_project'
+version: '1.0'
+
+config-version: 2
+
+profile: 'prazos_project'
+
+# Configurações globais para todos os modelos neste projeto
+model-paths: ["models"]
+
+models:
+  prazos_project:
+    materialized: 'table'
+
+# Você pode definir caminhos adicionais, como macros ou análises, se necessário
+macro-paths: ["macros"]
+
+# Configurações específicas para BigQuery
+query-comment: "{{ project_name }}: {{ job_trigger }}"
+
+# Configurações de compilação e execução do dbt
+require-dbt-version: [">=1.0.0"]

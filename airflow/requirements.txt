@@ -1,0 +1,11 @@
+pandas
+pyarrow
+numpy
+psycopg2-binary
+pyodbc
+sqlalchemy
+dbt-core
+dbt-bigquery
+airflow-dbt
+apache-airflow[odbc]
+gcsfs

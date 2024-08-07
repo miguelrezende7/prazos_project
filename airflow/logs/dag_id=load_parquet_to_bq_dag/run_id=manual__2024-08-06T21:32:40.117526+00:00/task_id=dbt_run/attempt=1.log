@@ -1,0 +1,72 @@
+[2024-08-06T21:32:40.884+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: load_parquet_to_bq_dag.dbt_run manual__2024-08-06T21:32:40.117526+00:00 [queued]>
+[2024-08-06T21:32:40.889+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: load_parquet_to_bq_dag.dbt_run manual__2024-08-06T21:32:40.117526+00:00 [queued]>
+[2024-08-06T21:32:40.889+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-06T21:32:40.889+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2024-08-06T21:32:40.889+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-06T21:32:40.895+0000] {taskinstance.py:1300} INFO - Executing <Task(DbtRunOperator): dbt_run> on 2024-08-06 21:32:40.117526+00:00
+[2024-08-06T21:32:40.898+0000] {standard_task_runner.py:55} INFO - Started process 88 to run task
+[2024-08-06T21:32:40.899+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'load_parquet_to_bq_dag', 'dbt_run', 'manual__2024-08-06T21:32:40.117526+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/load_dbt_dag.py', '--cfg-path', '/tmp/tmpdgsjndq9']
+[2024-08-06T21:32:40.899+0000] {standard_task_runner.py:83} INFO - Job 53: Subtask dbt_run
+[2024-08-06T21:32:40.923+0000] {task_command.py:388} INFO - Running <TaskInstance: load_parquet_to_bq_dag.dbt_run manual__2024-08-06T21:32:40.117526+00:00 [running]> on host d4a6db3524d9
+[2024-08-06T21:32:40.954+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=miguel
+AIRFLOW_CTX_DAG_ID=load_parquet_to_bq_dag
+AIRFLOW_CTX_TASK_ID=dbt_run
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-06T21:32:40.117526+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-08-06T21:32:40.117526+00:00
+[2024-08-06T21:32:40.955+0000] {dbt_hook.py:117} INFO - dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test
+[2024-08-06T21:32:40.960+0000] {dbt_hook.py:126} INFO - Output:
+[2024-08-06T21:32:42.159+0000] {dbt_hook.py:130} INFO - [0m21:32:42  Running with dbt=1.5.11
+[2024-08-06T21:32:43.044+0000] {dbt_hook.py:130} INFO - [0m21:32:43  Encountered an error:
+[2024-08-06T21:32:43.044+0000] {dbt_hook.py:130} INFO - invalid syntax (column.py, line 230)
+[2024-08-06T21:32:43.048+0000] {dbt_hook.py:130} INFO - [0m21:32:43  Traceback (most recent call last):
+[2024-08-06T21:32:43.048+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 86, in wrapper
+[2024-08-06T21:32:43.048+0000] {dbt_hook.py:130} INFO -     result, success = func(*args, **kwargs)
+[2024-08-06T21:32:43.049+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 71, in wrapper
+[2024-08-06T21:32:43.049+0000] {dbt_hook.py:130} INFO -     return func(*args, **kwargs)
+[2024-08-06T21:32:43.049+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 139, in wrapper
+[2024-08-06T21:32:43.049+0000] {dbt_hook.py:130} INFO -     profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+[2024-08-06T21:32:43.049+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/config/runtime.py", line 70, in load_profile
+[2024-08-06T21:32:43.050+0000] {dbt_hook.py:130} INFO -     profile_renderer, profile_name, profile_name_override, target_override, threads_override
+[2024-08-06T21:32:43.050+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 441, in render
+[2024-08-06T21:32:43.050+0000] {dbt_hook.py:130} INFO -     threads_override=threads_override,
+[2024-08-06T21:32:43.050+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 407, in from_raw_profiles
+[2024-08-06T21:32:43.051+0000] {dbt_hook.py:130} INFO -     threads_override=threads_override,
+[2024-08-06T21:32:43.051+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 356, in from_raw_profile_info
+[2024-08-06T21:32:43.051+0000] {dbt_hook.py:130} INFO -     profile_data, profile_name, target_name
+[2024-08-06T21:32:43.051+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 165, in _credentials_from_profile
+[2024-08-06T21:32:43.051+0000] {dbt_hook.py:130} INFO -     cls = load_plugin(typename)
+[2024-08-06T21:32:43.052+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/adapters/factory.py", line 209, in load_plugin
+[2024-08-06T21:32:43.052+0000] {dbt_hook.py:130} INFO -     return FACTORY.load_plugin(name)
+[2024-08-06T21:32:43.052+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/adapters/factory.py", line 58, in load_plugin
+[2024-08-06T21:32:43.052+0000] {dbt_hook.py:130} INFO -     mod: Any = import_module("." + name, "dbt.adapters")
+[2024-08-06T21:32:43.052+0000] {dbt_hook.py:130} INFO -   File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+[2024-08-06T21:32:43.052+0000] {dbt_hook.py:130} INFO -     return _bootstrap._gcd_import(name[level:], package, level)
+[2024-08-06T21:32:43.052+0000] {dbt_hook.py:130} INFO -   File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+[2024-08-06T21:32:43.053+0000] {dbt_hook.py:130} INFO -   File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+[2024-08-06T21:32:43.053+0000] {dbt_hook.py:130} INFO -   File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+[2024-08-06T21:32:43.053+0000] {dbt_hook.py:130} INFO -   File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+[2024-08-06T21:32:43.053+0000] {dbt_hook.py:130} INFO -   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+[2024-08-06T21:32:43.053+0000] {dbt_hook.py:130} INFO -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2024-08-06T21:32:43.053+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/adapters/bigquery/__init__.py", line 4, in <module>
+[2024-08-06T21:32:43.053+0000] {dbt_hook.py:130} INFO -     from dbt.adapters.bigquery.column import BigQueryColumn  # noqa
+[2024-08-06T21:32:43.054+0000] {dbt_hook.py:130} INFO -   File "/home/***/.local/lib/python3.7/site-packages/dbt/adapters/bigquery/column.py", line 230
+[2024-08-06T21:32:43.054+0000] {dbt_hook.py:130} INFO -     if existing_nested_column_data_type := nested_column_data_types.get(root_column_name):
+[2024-08-06T21:32:43.054+0000] {dbt_hook.py:130} INFO -                                          ^
+[2024-08-06T21:32:43.054+0000] {dbt_hook.py:130} INFO - SyntaxError: invalid syntax
+[2024-08-06T21:32:43.054+0000] {dbt_hook.py:130} INFO - 
+[2024-08-06T21:32:43.785+0000] {dbt_hook.py:134} INFO - Command exited with return code 2
+[2024-08-06T21:32:43.791+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow_dbt/operators/dbt_operator.py", line 98, in execute
+    self.create_hook().run_cli('run')
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow_dbt/hooks/dbt_hook.py", line 138, in run_cli
+    raise AirflowException("dbt command failed")
+airflow.exceptions.AirflowException: dbt command failed
+[2024-08-06T21:32:43.793+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=load_parquet_to_bq_dag, task_id=dbt_run, execution_date=20240806T213240, start_date=20240806T213240, end_date=20240806T213243
+[2024-08-06T21:32:43.800+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 53 for task dbt_run (dbt command failed; 88)
+[2024-08-06T21:32:43.813+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2024-08-06T21:32:43.821+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

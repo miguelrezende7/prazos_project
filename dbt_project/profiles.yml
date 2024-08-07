@@ -1,0 +1,11 @@
+prazos_project:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: 'prazos-project'
+      dataset: 'prazos_project_dataset'
+      keyfile: '/opt/airflow/keys/prazos-project-080f299b982e.json'
+      threads: 1
+      timeout_seconds: 300
+  target: dev

@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+  - name: gcs_data
+    tables:
+      - name: parquet_data
+        external:
+          location: 'gs://prazos_bucket/2024/08/06/202354_file.parquet'
+          format: 'parquet'

@@ -1,0 +1,43 @@
+[2024-08-02T19:46:09.520+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: execute_get_api_data_script.run_python_script scheduled__2024-08-01T19:46:08.277212+00:00 [queued]>
+[2024-08-02T19:46:09.525+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: execute_get_api_data_script.run_python_script scheduled__2024-08-01T19:46:08.277212+00:00 [queued]>
+[2024-08-02T19:46:09.525+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-02T19:46:09.525+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2024-08-02T19:46:09.525+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-02T19:46:09.532+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): run_python_script> on 2024-08-01 19:46:08.277212+00:00
+[2024-08-02T19:46:09.534+0000] {standard_task_runner.py:55} INFO - Started process 125 to run task
+[2024-08-02T19:46:09.536+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'execute_get_api_data_script', 'run_python_script', 'scheduled__2024-08-01T19:46:08.277212+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/get_api_data_dag.py', '--cfg-path', '/tmp/tmprp4l2b4q']
+[2024-08-02T19:46:09.536+0000] {standard_task_runner.py:83} INFO - Job 18: Subtask run_python_script
+[2024-08-02T19:46:09.564+0000] {task_command.py:388} INFO - Running <TaskInstance: execute_get_api_data_script.run_python_script scheduled__2024-08-01T19:46:08.277212+00:00 [running]> on host ebb7cd7d43b9
+[2024-08-02T19:46:09.603+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=miguelrezende
+AIRFLOW_CTX_DAG_ID=execute_get_api_data_script
+AIRFLOW_CTX_TASK_ID=run_python_script
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-01T19:46:08.277212+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-01T19:46:08.277212+00:00
+[2024-08-02T19:46:09.604+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-08-02T19:46:09.604+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/python_scripts/get_api_data_script.py 2>&1']
+[2024-08-02T19:46:09.608+0000] {subprocess.py:86} INFO - Output:
+[2024-08-02T19:46:10.769+0000] {subprocess.py:93} INFO - Getting data from API
+[2024-08-02T19:46:10.770+0000] {subprocess.py:93} INFO - 
+[2024-08-02T19:46:10.770+0000] {subprocess.py:93} INFO - Endpoint: feriados
+[2024-08-02T19:46:10.771+0000] {subprocess.py:93} INFO - Suzano - 2023
+[2024-08-02T19:46:10.771+0000] {subprocess.py:93} INFO - Suzano - 2024
+[2024-08-02T19:46:10.771+0000] {subprocess.py:93} INFO - Mogi das Cruzes - 2023
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - Mogi das Cruzes - 2024
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - 
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - Endpoint: suspensoes
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - Suzano - 2023
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - Suzano - 2024
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - Mogi das Cruzes - 2023
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - Mogi das Cruzes - 2024
+[2024-08-02T19:46:10.772+0000] {subprocess.py:93} INFO - Saving file: gs://prazos_bucket/2024/08/02/194610_file.parquet in Google Cloud Storage
+[2024-08-02T19:46:10.773+0000] {subprocess.py:93} INFO - Error saving file: gs://prazos_bucket/2024/08/02/194610_file.parquet in Google Cloud Storage
+[2024-08-02T19:46:10.773+0000] {subprocess.py:93} INFO - Please install gcsfs to access Google Storage
+[2024-08-02T19:46:10.805+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-08-02T19:46:10.819+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=execute_get_api_data_script, task_id=run_python_script, execution_date=20240801T194608, start_date=20240802T194609, end_date=20240802T194610
+[2024-08-02T19:46:10.829+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-08-02T19:46:10.840+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

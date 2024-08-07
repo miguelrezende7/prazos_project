@@ -1,0 +1,1 @@
+{"_invocation_id": "5ab8b7b2-7120-4bf6-91e2-5ce783baf35a", "linked": {"0": {"name": "source.prazos_project.gcs_data.parquet_data", "type": "source"}, "1": {"name": "model.prazos_project.load_parquet_to_test", "type": "model"}}}
