@@ -1,4 +1,4 @@
-FROM apache/airflow:2.5.1-python3.8
+FROM apache/airflow:2.9.3-python3.8
 
 # Base image
 # FROM apache/airflow:2.8.1
