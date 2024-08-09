@@ -1,472 +1,334 @@
-[0m21:32:42.155098 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff83ff7990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff83ff7ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff83ff7fd0>]}
+[0m18:07:01.837049 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa305efd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa153b1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa153bd30>]}
 
 
-============================== 21:32:42.159013 | 22eb993c-aea8-430a-b166-02c2c6ccb864 ==============================
-[0m21:32:42.159013 [info ] [MainThread]: Running with dbt=1.5.11
-[0m21:32:42.159551 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/opt/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
-[0m21:32:43.043697 [error] [MainThread]: Encountered an error:
-invalid syntax (column.py, line 230)
-[0m21:32:43.047608 [error] [MainThread]: Traceback (most recent call last):
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 86, in wrapper
-    result, success = func(*args, **kwargs)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 71, in wrapper
-    return func(*args, **kwargs)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 139, in wrapper
-    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/runtime.py", line 70, in load_profile
-    profile_renderer, profile_name, profile_name_override, target_override, threads_override
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 441, in render
-    threads_override=threads_override,
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 407, in from_raw_profiles
-    threads_override=threads_override,
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 356, in from_raw_profile_info
-    profile_data, profile_name, target_name
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 165, in _credentials_from_profile
-    cls = load_plugin(typename)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/factory.py", line 209, in load_plugin
-    return FACTORY.load_plugin(name)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/factory.py", line 58, in load_plugin
-    mod: Any = import_module("." + name, "dbt.adapters")
-  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/bigquery/__init__.py", line 4, in <module>
-    from dbt.adapters.bigquery.column import BigQueryColumn  # noqa
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/bigquery/column.py", line 230
-    if existing_nested_column_data_type := nested_column_data_types.get(root_column_name):
-                                         ^
-SyntaxError: invalid syntax
-
-[0m21:32:43.050286 [debug] [MainThread]: Command `dbt run` failed at 21:32:43.049961 after 0.90 seconds
-[0m21:32:43.051578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff84012790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff84012650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff840120d0>]}
-[0m21:32:43.055331 [debug] [MainThread]: Flushing usage events
-[0m21:34:30.171239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92127990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff921279d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92127690>]}
-
-
-============================== 21:34:30.175160 | 5e2809f9-cca8-40bd-8fdc-badd978e66b1 ==============================
-[0m21:34:30.175160 [info ] [MainThread]: Running with dbt=1.5.11
-[0m21:34:30.175637 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/dbt_project/logs', 'profiles_dir': '/opt/dbt_project', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
-[0m21:34:30.555206 [error] [MainThread]: Encountered an error:
-invalid syntax (column.py, line 230)
-[0m21:34:30.556079 [error] [MainThread]: Traceback (most recent call last):
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 86, in wrapper
-    result, success = func(*args, **kwargs)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 71, in wrapper
-    return func(*args, **kwargs)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/cli/requires.py", line 139, in wrapper
-    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/runtime.py", line 70, in load_profile
-    profile_renderer, profile_name, profile_name_override, target_override, threads_override
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 441, in render
-    threads_override=threads_override,
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 407, in from_raw_profiles
-    threads_override=threads_override,
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 356, in from_raw_profile_info
-    profile_data, profile_name, target_name
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/config/profile.py", line 165, in _credentials_from_profile
-    cls = load_plugin(typename)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/factory.py", line 209, in load_plugin
-    return FACTORY.load_plugin(name)
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/factory.py", line 58, in load_plugin
-    mod: Any = import_module("." + name, "dbt.adapters")
-  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/bigquery/__init__.py", line 4, in <module>
-    from dbt.adapters.bigquery.column import BigQueryColumn  # noqa
-  File "/home/airflow/.local/lib/python3.7/site-packages/dbt/adapters/bigquery/column.py", line 230
-    if existing_nested_column_data_type := nested_column_data_types.get(root_column_name):
-                                         ^
-SyntaxError: invalid syntax
-
-[0m21:34:30.556781 [debug] [MainThread]: Command `dbt run` failed at 21:34:30.556703 after 0.39 seconds
-[0m21:34:30.557133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92127890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92127a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92127e10>]}
-[0m21:34:30.557474 [debug] [MainThread]: Flushing usage events
-[0m21:41:40.474283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffba86bdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffba171040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb9780cd0>]}
-
-
-============================== 21:41:40.478640 | d52feaa5-fed6-4cbf-8332-9e5323d94038 ==============================
-[0m21:41:40.478640 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:41:40.479185 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/dbt_project/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m21:41:42.094542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd52feaa5-fed6-4cbf-8332-9e5323d94038', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9cc58250>]}
-[0m21:41:42.139718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd52feaa5-fed6-4cbf-8332-9e5323d94038', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9cbe59d0>]}
-[0m21:41:42.140517 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:41:42.149811 [error] [MainThread]: Encountered an error:
-Compilation Error
-  dbt found 3 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
-[0m21:41:42.151805 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.7087235, "process_user_time": 2.799243, "process_kernel_time": 0.324884, "process_mem_max_rss": "221776", "process_out_blocks": "15192", "command_success": false, "process_in_blocks": "0"}
-[0m21:41:42.152998 [debug] [MainThread]: Command `dbt run` failed at 21:41:42.152860 after 1.71 seconds
-[0m21:41:42.154080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffba86bdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb8c98580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9cad5340>]}
-[0m21:41:42.155472 [debug] [MainThread]: Flushing usage events
-[0m21:41:55.377736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8dbdffa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8e90f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8c349d30>]}
-
-
-============================== 21:41:55.381040 | 0ca2fb2b-dc5c-4499-8edf-262003c80328 ==============================
-[0m21:41:55.381040 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:41:55.381488 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/opt/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'send_anonymous_usage_stats': 'True'}
-[0m21:41:55.911323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0ca2fb2b-dc5c-4499-8edf-262003c80328', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8d98dc70>]}
-[0m21:41:55.945271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0ca2fb2b-dc5c-4499-8edf-262003c80328', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8c272070>]}
-[0m21:41:55.945837 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:41:55.949223 [error] [MainThread]: Encountered an error:
-Compilation Error
-  dbt found 3 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
-[0m21:41:55.950141 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.60041255, "process_user_time": 1.883494, "process_kernel_time": 0.127138, "process_mem_max_rss": "221796", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m21:41:55.950646 [debug] [MainThread]: Command `dbt run` failed at 21:41:55.950563 after 0.60 seconds
-[0m21:41:55.951041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8dbdffa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff701545b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8c25c160>]}
-[0m21:41:55.951396 [debug] [MainThread]: Flushing usage events
-[0m21:44:51.376185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa316bf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa3eb89a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa22fcb80>]}
-
-
-============================== 21:44:51.379588 | c858f6ab-4d1a-4470-afbf-6b7a8ea6f9eb ==============================
-[0m21:44:51.379588 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:44:51.380190 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/opt/dbt_project', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m21:44:51.928028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c858f6ab-4d1a-4470-afbf-6b7a8ea6f9eb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa28cd130>]}
-[0m21:44:51.952744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c858f6ab-4d1a-4470-afbf-6b7a8ea6f9eb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff857bddc0>]}
-[0m21:44:51.953226 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:44:51.961522 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m21:44:51.963196 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
-[0m21:44:51.963619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c858f6ab-4d1a-4470-afbf-6b7a8ea6f9eb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff856d5760>]}
-[0m21:44:52.549803 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
-There are 3 unused configuration paths:
-- models.prazos_project.staging
-- models.prazos_project.marts.core
-- models.prazos_project.marts.intermediate
-[0m21:44:52.557580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c858f6ab-4d1a-4470-afbf-6b7a8ea6f9eb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d757c10>]}
-[0m21:44:52.617932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c858f6ab-4d1a-4470-afbf-6b7a8ea6f9eb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d63ffd0>]}
-[0m21:44:52.618333 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m21:44:52.618695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c858f6ab-4d1a-4470-afbf-6b7a8ea6f9eb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d72ea90>]}
-[0m21:44:52.619462 [info ] [MainThread]: 
-[0m21:44:52.619943 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m21:44:52.620674 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos_project'
-[0m21:44:52.621000 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m21:44:53.406571 [debug] [ThreadPool]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest("GET https://bigquery.googleapis.com/bigquery/v2/projects/prazos_project/datasets?maxResults=10000&prettyPrint=false: Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.")
-[0m21:44:53.716177 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m21:44:53.717834 [debug] [MainThread]: Connection 'list_prazos_project' was properly closed.
-[0m21:44:53.718849 [info ] [MainThread]: 
-[0m21:44:53.720657 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.10 seconds (1.10s).
-[0m21:44:53.721918 [error] [MainThread]: Encountered an error:
-Database Error
-  Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
-[0m21:44:53.724504 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.3743198, "process_user_time": 2.794531, "process_kernel_time": 0.195109, "process_mem_max_rss": "219484", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m21:44:53.726884 [debug] [MainThread]: Command `dbt run` failed at 21:44:53.726668 after 2.38 seconds
-[0m21:44:53.727859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa316bf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d7db0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d5fd040>]}
-[0m21:44:53.728755 [debug] [MainThread]: Flushing usage events
-[0m21:46:58.230358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffae5cce80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffae2d10a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffaccba670>]}
-
-
-============================== 21:46:58.233767 | a82994b2-f325-4987-bf57-35914f6ff628 ==============================
-[0m21:46:58.233767 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:46:58.234283 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/dbt_project/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m21:46:58.760343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a82994b2-f325-4987-bf57-35914f6ff628', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff90c93160>]}
-[0m21:46:58.786032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a82994b2-f325-4987-bf57-35914f6ff628', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffade09280>]}
-[0m21:46:58.786562 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:46:58.795030 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m21:46:58.863159 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
-[0m21:46:58.863587 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
-[0m21:46:58.867221 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
-There are 3 unused configuration paths:
-- models.prazos_project.staging
-- models.prazos_project.marts.core
-- models.prazos_project.marts.intermediate
-[0m21:46:58.888734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a82994b2-f325-4987-bf57-35914f6ff628', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa959d460>]}
-[0m21:46:58.959537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a82994b2-f325-4987-bf57-35914f6ff628', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa9585be0>]}
-[0m21:46:58.959969 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m21:46:58.960354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a82994b2-f325-4987-bf57-35914f6ff628', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa95a8280>]}
-[0m21:46:58.961123 [info ] [MainThread]: 
-[0m21:46:58.961569 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m21:46:58.962175 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos_project'
-[0m21:46:58.962805 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m21:46:59.479762 [debug] [ThreadPool]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest("GET https://bigquery.googleapis.com/bigquery/v2/projects/prazos_project/datasets?maxResults=10000&prettyPrint=false: Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.")
-[0m21:47:00.300077 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m21:47:00.300690 [debug] [MainThread]: Connection 'list_prazos_project' was properly closed.
-[0m21:47:00.301199 [info ] [MainThread]: 
-[0m21:47:00.301907 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.34 seconds (1.34s).
-[0m21:47:00.303803 [error] [MainThread]: Encountered an error:
-Database Error
-  Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
-[0m21:47:00.304713 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.1001081, "process_user_time": 2.109943, "process_kernel_time": 0.133736, "process_mem_max_rss": "219488", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m21:47:00.305377 [debug] [MainThread]: Command `dbt run` failed at 21:47:00.305292 after 2.10 seconds
-[0m21:47:00.305854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffae5cce80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa94f5b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa942f3a0>]}
-[0m21:47:00.306300 [debug] [MainThread]: Flushing usage events
-[0m21:49:47.166751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa0493e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9eb77e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9eb77bb0>]}
-
-
-============================== 21:49:47.170145 | fec31e41-81e5-4ddc-a2a5-6b008c27a9f3 ==============================
-[0m21:49:47.170145 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:49:47.170645 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/opt/dbt_project/logs', 'profiles_dir': '/opt/dbt_project', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m21:49:47.691951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fec31e41-81e5-4ddc-a2a5-6b008c27a9f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa0b31d90>]}
-[0m21:49:47.717276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fec31e41-81e5-4ddc-a2a5-6b008c27a9f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9ebb24f0>]}
-[0m21:49:47.717803 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:49:47.726585 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m21:49:47.799717 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
-[0m21:49:47.800942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fec31e41-81e5-4ddc-a2a5-6b008c27a9f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9f6739d0>]}
-[0m21:49:48.375581 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fec31e41-81e5-4ddc-a2a5-6b008c27a9f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9aa02130>]}
-[0m21:49:48.433564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fec31e41-81e5-4ddc-a2a5-6b008c27a9f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9a995190>]}
-[0m21:49:48.433936 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m21:49:48.434292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fec31e41-81e5-4ddc-a2a5-6b008c27a9f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9aa65940>]}
-[0m21:49:48.434963 [info ] [MainThread]: 
-[0m21:49:48.435396 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m21:49:48.436032 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos_project'
-[0m21:49:48.436424 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m21:49:48.954542 [debug] [ThreadPool]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest("GET https://bigquery.googleapis.com/bigquery/v2/projects/prazos_project/datasets?maxResults=10000&prettyPrint=false: Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.")
-[0m21:49:50.055499 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m21:49:50.056832 [debug] [MainThread]: Connection 'list_prazos_project' was properly closed.
-[0m21:49:50.057672 [info ] [MainThread]: 
-[0m21:49:50.059319 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.62 seconds (1.62s).
-[0m21:49:50.060482 [error] [MainThread]: Encountered an error:
-Database Error
-  Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
-[0m21:49:50.062559 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.9240282, "process_user_time": 2.621225, "process_kernel_time": 0.142379, "process_mem_max_rss": "220660", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m21:49:50.063683 [debug] [MainThread]: Command `dbt run` failed at 21:49:50.063555 after 2.93 seconds
-[0m21:49:50.064464 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa0493e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9a94fc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9a94ffa0>]}
-[0m21:49:50.065162 [debug] [MainThread]: Flushing usage events
-[0m21:49:56.221122 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff81b4cf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8287b9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff80cf2b80>]}
-
-
-============================== 21:49:56.234512 | 010c9885-92aa-4e24-8ae1-2ad4bc7447d0 ==============================
-[0m21:49:56.234512 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:49:56.235650 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/opt/dbt_project/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m21:49:56.836133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '010c9885-92aa-4e24-8ae1-2ad4bc7447d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff801eff40>]}
-[0m21:49:56.863837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '010c9885-92aa-4e24-8ae1-2ad4bc7447d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff641f25e0>]}
-[0m21:49:56.864549 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:49:56.875726 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m21:49:56.942855 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
-[0m21:49:56.943393 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
-[0m21:49:56.962317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '010c9885-92aa-4e24-8ae1-2ad4bc7447d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7cb688b0>]}
-[0m21:49:57.022078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '010c9885-92aa-4e24-8ae1-2ad4bc7447d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7caa1fd0>]}
-[0m21:49:57.022481 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m21:49:57.022818 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '010c9885-92aa-4e24-8ae1-2ad4bc7447d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7cc4fb80>]}
-[0m21:49:57.023617 [info ] [MainThread]: 
-[0m21:49:57.024053 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m21:49:57.024729 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos_project'
-[0m21:49:57.025054 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m21:49:57.556144 [debug] [ThreadPool]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest("GET https://bigquery.googleapis.com/bigquery/v2/projects/prazos_project/datasets?maxResults=10000&prettyPrint=false: Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.")
-[0m21:49:58.194692 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m21:49:58.195345 [debug] [MainThread]: Connection 'list_prazos_project' was properly closed.
-[0m21:49:58.195814 [info ] [MainThread]: 
-[0m21:49:58.196515 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.17 seconds (1.17s).
-[0m21:49:58.198325 [error] [MainThread]: Encountered an error:
-Database Error
-  Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
-[0m21:49:58.199443 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.054843, "process_user_time": 2.194348, "process_kernel_time": 0.151056, "process_mem_max_rss": "220656", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m21:49:58.200085 [debug] [MainThread]: Command `dbt run` failed at 21:49:58.200008 after 2.06 seconds
-[0m21:49:58.200558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff81b4cf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff641e6ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7ca6f190>]}
-[0m21:49:58.200998 [debug] [MainThread]: Flushing usage events
-[0m21:54:52.599681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff995d6f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff97c83040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff97c83d30>]}
-
-
-============================== 21:54:52.603419 | 8241f5b8-4000-4eaf-a99e-db9f51dd643c ==============================
-[0m21:54:52.603419 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:54:52.604213 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m21:54:53.192947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8241f5b8-4000-4eaf-a99e-db9f51dd643c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff77ca9fd0>]}
-[0m21:54:53.221197 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8241f5b8-4000-4eaf-a99e-db9f51dd643c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff77ca4c40>]}
-[0m21:54:53.221746 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:54:53.233062 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m21:54:53.322641 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
-[0m21:54:53.323306 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
-[0m21:54:53.363942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8241f5b8-4000-4eaf-a99e-db9f51dd643c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff945b2880>]}
-[0m21:54:53.473895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8241f5b8-4000-4eaf-a99e-db9f51dd643c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff944ecfa0>]}
-[0m21:54:53.474610 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m21:54:53.475437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8241f5b8-4000-4eaf-a99e-db9f51dd643c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff945b27c0>]}
-[0m21:54:53.476712 [info ] [MainThread]: 
-[0m21:54:53.477537 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m21:54:53.478534 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos_project'
-[0m21:54:53.478978 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m21:54:54.292310 [debug] [ThreadPool]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest("GET https://bigquery.googleapis.com/bigquery/v2/projects/prazos_project/datasets?maxResults=10000&prettyPrint=false: Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.")
-[0m21:54:55.111557 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m21:54:55.112170 [debug] [MainThread]: Connection 'list_prazos_project' was properly closed.
-[0m21:54:55.113073 [info ] [MainThread]: 
-[0m21:54:55.113688 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.64 seconds (1.64s).
-[0m21:54:55.115535 [error] [MainThread]: Encountered an error:
-Database Error
-  Invalid project ID 'prazos_project'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
-[0m21:54:55.116650 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.5439184, "process_user_time": 2.284334, "process_kernel_time": 0.181007, "process_mem_max_rss": "220656", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m21:54:55.117330 [debug] [MainThread]: Command `dbt run` failed at 21:54:55.117233 after 2.54 seconds
-[0m21:54:55.117816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff995d6f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff77c01e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff944b91c0>]}
-[0m21:54:55.118356 [debug] [MainThread]: Flushing usage events
-[0m21:55:47.238617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8c383f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8b563a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8aaef3a0>]}
-
-
-============================== 21:55:47.242195 | c22b95ef-2508-40c6-bfb4-5c583f380ad6 ==============================
-[0m21:55:47.242195 [info ] [MainThread]: Running with dbt=1.8.4
-[0m21:55:47.242652 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/dbt_project/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m21:55:47.817317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8ca02a60>]}
-[0m21:55:47.847525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6aa14670>]}
-[0m21:55:47.848169 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m21:55:47.858993 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m21:55:47.917988 [info ] [MainThread]: Unable to do partial parsing because profile has changed
-[0m21:55:47.918525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8b5639d0>]}
-[0m21:55:48.615835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff868a3400>]}
-[0m21:55:48.793703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff86819220>]}
-[0m21:55:48.794233 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m21:55:48.794846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff86897790>]}
-[0m21:55:48.795857 [info ] [MainThread]: 
-[0m21:55:48.796530 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m21:55:48.797434 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
-[0m21:55:48.797846 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m21:55:49.450209 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now create_prazos-project_prazos_project_dataset_prazos_project_dataset)
-[0m21:55:49.451284 [debug] [ThreadPool]: Creating schema "database: "prazos-project"
-schema: "prazos_project_dataset_prazos_project_dataset"
+============================== 18:07:01.841387 | eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4 ==============================
+[0m18:07:01.841387 [info ] [MainThread]: Running with dbt=1.8.4
+[0m18:07:01.842389 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/dbt_project/logs', 'version_check': 'True', 'profiles_dir': '/opt/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:07:02.380931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa2dfcf70>]}
+[0m18:07:02.408981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7ffdfac0>]}
+[0m18:07:02.410292 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m18:07:02.423411 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m18:07:02.424346 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:07:02.424934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7ff9cac0>]}
+[0m18:07:03.135001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d53eeb0>]}
+[0m18:07:03.191854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d4a4160>]}
+[0m18:07:03.192405 [info ] [MainThread]: Found 2 models, 473 macros
+[0m18:07:03.193085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9de35070>]}
+[0m18:07:03.194128 [info ] [MainThread]: 
+[0m18:07:03.194720 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:07:03.197357 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m18:07:03.197709 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:07:03.910480 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now create_prazos-project_prazos_trusted)
+[0m18:07:03.912082 [debug] [ThreadPool]: Creating schema "database: "prazos-project"
+schema: "prazos_trusted"
 "
-[0m21:55:49.462227 [debug] [ThreadPool]: Opening a new connection, currently in state closed
-[0m21:55:49.507659 [debug] [ThreadPool]: On create_prazos-project_prazos_project_dataset_prazos_project_dataset: /* prazos_project: */
-create schema if not exists `prazos-project`.`prazos_project_dataset_prazos_project_dataset`
+[0m18:07:03.929681 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:07:03.981916 [debug] [ThreadPool]: On create_prazos-project_prazos_trusted: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "connection_name": "create_prazos-project_prazos_trusted"} */
+create schema if not exists `prazos-project`.`prazos_trusted`
   
-[0m21:55:51.233768 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:5ba357dc-9efe-4a93-a887-0b7cb8ea6aec&page=queryresults
-[0m21:55:52.149892 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_prazos-project_prazos_project_dataset_prazos_project_dataset, now list_prazos-project_prazos_project_dataset_prazos_project_dataset)
-[0m21:55:52.150518 [debug] [ThreadPool]: Opening a new connection, currently in state closed
-[0m21:55:52.876579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff867e9ee0>]}
-[0m21:55:52.879359 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
-[0m21:55:52.880938 [info ] [MainThread]: 
-[0m21:55:52.891879 [debug] [Thread-1  ]: Began running node model.prazos_project.load_parquet_to_test
-[0m21:55:52.893250 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_project_dataset_prazos_project_dataset.test  [RUN]
-[0m21:55:52.894434 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_project_dataset_prazos_project_dataset, now model.prazos_project.load_parquet_to_test)
-[0m21:55:52.895304 [debug] [Thread-1  ]: Began compiling node model.prazos_project.load_parquet_to_test
-[0m21:55:52.906227 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.load_parquet_to_test"
-[0m21:55:52.908988 [debug] [Thread-1  ]: Began executing node model.prazos_project.load_parquet_to_test
-[0m21:55:52.941302 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.load_parquet_to_test"
-[0m21:55:52.943539 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
-[0m21:55:52.980479 [debug] [Thread-1  ]: On model.prazos_project.load_parquet_to_test: /* prazos_project: */
+[0m18:07:04.882939 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:042cadaf-d6c8-47cb-af90-f008e1b8ad04&page=queryresults
+[0m18:07:06.012882 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_prazos-project_prazos_trusted, now list_prazos-project_prazos_trusted)
+[0m18:07:06.013623 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:07:06.657869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9df58cd0>]}
+[0m18:07:06.660282 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:07:06.662757 [info ] [MainThread]: 
+[0m18:07:06.673467 [debug] [Thread-1  ]: Began running node model.prazos_project.tj_api_data
+[0m18:07:06.674541 [info ] [Thread-1  ]: 1 of 2 START sql view model prazos_trusted.tj_api_data ......................... [RUN]
+[0m18:07:06.675617 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.tj_api_data)
+[0m18:07:06.676709 [debug] [Thread-1  ]: Began compiling node model.prazos_project.tj_api_data
+[0m18:07:06.684699 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.tj_api_data"
+[0m18:07:06.687022 [debug] [Thread-1  ]: Began executing node model.prazos_project.tj_api_data
+[0m18:07:06.713770 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.tj_api_data"
+[0m18:07:06.715665 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m18:07:06.753594 [debug] [Thread-1  ]: On model.prazos_project.tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "node_id": "model.prazos_project.tj_api_data"} */
+
+
+  create or replace view `prazos-project`.`prazos_trusted`.`tj_api_data`
+  OPTIONS()
+  as SELECT * FROM `prazos-project.prazos_raw.tj_api_data`;
+
+
+[0m18:07:07.707436 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:ca7ad639-aed8-4fe6-8b95-fff80d6fc932&page=queryresults
+[0m18:07:08.498273 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d242fd0>]}
+[0m18:07:08.499743 [info ] [Thread-1  ]: 1 of 2 OK created sql view model prazos_trusted.tj_api_data .................... [[32mCREATE VIEW (0 processed)[0m in 1.82s]
+[0m18:07:08.502100 [debug] [Thread-1  ]: Finished running node model.prazos_project.tj_api_data
+[0m18:07:08.503695 [debug] [Thread-3  ]: Began running node model.prazos_project.tj_api_data_transformed
+[0m18:07:08.504570 [info ] [Thread-3  ]: 2 of 2 START sql table model prazos_trusted.tj_api_data_transformed ............ [RUN]
+[0m18:07:08.505530 [debug] [Thread-3  ]: Acquiring new bigquery connection 'model.prazos_project.tj_api_data_transformed'
+[0m18:07:08.506159 [debug] [Thread-3  ]: Began compiling node model.prazos_project.tj_api_data_transformed
+[0m18:07:08.509707 [debug] [Thread-3  ]: Writing injected SQL for node "model.prazos_project.tj_api_data_transformed"
+[0m18:07:08.511972 [debug] [Thread-3  ]: Began executing node model.prazos_project.tj_api_data_transformed
+[0m18:07:08.534365 [debug] [Thread-3  ]: Writing runtime sql for node "model.prazos_project.tj_api_data_transformed"
+[0m18:07:08.535841 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m18:07:08.572514 [debug] [Thread-3  ]: On model.prazos_project.tj_api_data_transformed: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "node_id": "model.prazos_project.tj_api_data_transformed"} */
 
   
     
 
-    create or replace table `prazos-project`.`prazos_project_dataset_prazos_project_dataset`.`test`
+    create or replace table `prazos-project`.`prazos_trusted`.`tj_api_data_transformed`
       
     
     
 
     OPTIONS()
     as (
-      
-
-WITH source_data AS (
-    SELECT * FROM `prazos-project`.`gcs_data`.`parquet_data`
+      WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_trusted`.`tj_api_data`
 )
 
 SELECT *
-FROM source_data;
+FROM latest_data
+WHERE row_num = 1
     );
   
-[0m21:55:53.586106 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:ab0fb349-496c-4e22-97c0-052fad54f050&page=queryresults
-[0m21:55:53.587942 [debug] [Thread-1  ]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('Syntax error: Expected ")" but got ";" at [20:17]; reason: invalidQuery, location: query, message: Syntax error: Expected ")" but got ";" at [20:17]')
-[0m21:55:54.076258 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:ae887101-e575-4390-93ac-a61f07180a76&page=queryresults
-[0m21:55:54.078468 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:ae887101-e575-4390-93ac-a61f07180a76&page=queryresults
-[0m21:55:54.085862 [debug] [Thread-1  ]: Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [20:17]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m21:55:54.089840 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c22b95ef-2508-40c6-bfb4-5c583f380ad6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff85f15490>]}
-[0m21:55:54.091319 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model prazos_project_dataset_prazos_project_dataset.test  [[31mERROR[0m in 1.19s]
-[0m21:55:54.092788 [debug] [Thread-1  ]: Finished running node model.prazos_project.load_parquet_to_test
-[0m21:55:54.094846 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m21:55:54.095428 [debug] [MainThread]: Connection 'model.prazos_project.load_parquet_to_test' was properly closed.
-[0m21:55:54.096011 [info ] [MainThread]: 
-[0m21:55:54.096799 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.30 seconds (5.30s).
-[0m21:55:54.097852 [debug] [MainThread]: Command end result
-[0m21:55:54.134918 [info ] [MainThread]: 
-[0m21:55:54.135331 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
-[0m21:55:54.135681 [info ] [MainThread]: 
-[0m21:55:54.136072 [error] [MainThread]:   Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [20:17]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m21:55:54.136368 [info ] [MainThread]: 
-[0m21:55:54.136774 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
-[0m21:55:54.137579 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 6.9258127, "process_user_time": 3.132394, "process_kernel_time": 0.204133, "process_mem_max_rss": "222460", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m21:55:54.138087 [debug] [MainThread]: Command `dbt run` failed at 21:55:54.138020 after 6.93 seconds
-[0m21:55:54.138470 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8c383f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff86854670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8b57c100>]}
-[0m21:55:54.138804 [debug] [MainThread]: Flushing usage events
-[0m22:01:29.892743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffad4b4eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffabb57190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffabb57df0>]}
+[0m18:07:09.902244 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:8166af8a-9015-47ec-999c-75cff5d3d60d&page=queryresults
+[0m18:07:12.567729 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'eb6f1671-bb69-4ba9-9ab9-2ca7dd902cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d268d30>]}
+[0m18:07:12.570582 [info ] [Thread-3  ]: 2 of 2 OK created sql table model prazos_trusted.tj_api_data_transformed ....... [[32mCREATE TABLE (448.0 rows, 161.7 KiB processed)[0m in 4.06s]
+[0m18:07:12.573506 [debug] [Thread-3  ]: Finished running node model.prazos_project.tj_api_data_transformed
+[0m18:07:12.577226 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:07:12.578403 [debug] [MainThread]: Connection 'model.prazos_project.tj_api_data' was properly closed.
+[0m18:07:12.579269 [debug] [MainThread]: Connection 'model.prazos_project.tj_api_data_transformed' was properly closed.
+[0m18:07:12.580328 [info ] [MainThread]: 
+[0m18:07:12.581801 [info ] [MainThread]: Finished running 1 view model, 1 table model in 0 hours 0 minutes and 9.39 seconds (9.39s).
+[0m18:07:12.583984 [debug] [MainThread]: Command end result
+[0m18:07:12.630042 [info ] [MainThread]: 
+[0m18:07:12.630743 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:07:12.631170 [info ] [MainThread]: 
+[0m18:07:12.631603 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m18:07:12.633096 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 10.828447, "process_user_time": 3.372663, "process_kernel_time": 0.223881, "process_mem_max_rss": "224476", "process_in_blocks": "39336", "process_out_blocks": "0"}
+[0m18:07:12.633752 [debug] [MainThread]: Command `dbt run` succeeded at 18:07:12.633689 after 10.83 seconds
+[0m18:07:12.634319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa305efd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa2219a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7ffdfac0>]}
+[0m18:07:12.634869 [debug] [MainThread]: Flushing usage events
+[0m15:31:16.424102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102255a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103d0bbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103d0bdc0>]}
 
 
-============================== 22:01:29.897106 | 829bd993-8fdf-48f3-a485-13b94dc5b84a ==============================
-[0m22:01:29.897106 [info ] [MainThread]: Running with dbt=1.8.4
-[0m22:01:29.897629 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
-[0m22:01:30.572040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '829bd993-8fdf-48f3-a485-13b94dc5b84a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffadb44a00>]}
-[0m22:01:30.602133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '829bd993-8fdf-48f3-a485-13b94dc5b84a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffabb040a0>]}
-[0m22:01:30.602630 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m22:01:30.613059 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m22:01:30.684456 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m22:01:30.684961 [debug] [MainThread]: Partial parsing: updated file: prazos_project://models/load_parquet_to_test.sql
-[0m22:01:30.859523 [error] [MainThread]: Encountered an error:
-Compilation Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  expected token ',', got '='
-    line 2
-      --     materialized='table',
-[0m22:01:30.860782 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.0114442, "process_user_time": 2.352309, "process_kernel_time": 0.316955, "process_mem_max_rss": "221408", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m22:01:30.861461 [debug] [MainThread]: Command `dbt run` failed at 22:01:30.861381 after 1.01 seconds
-[0m22:01:30.862044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffad4b4eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa83d2ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa83d2b20>]}
-[0m22:01:30.862519 [debug] [MainThread]: Flushing usage events
-[0m22:01:34.790397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d019f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9dd48970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9b704fa0>]}
+============================== 15:31:16.427145 | d9004cb1-440b-444a-94bb-56658f2cd71d ==============================
+[0m15:31:16.427145 [info ] [MainThread]: Running with dbt=1.8.4
+[0m15:31:16.427478 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/miguelrezende/Documents/prazos_project/dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/miguelrezende/Documents/prazos_project/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --models tj_api_data_transformed', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:31:17.191801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd9004cb1-440b-444a-94bb-56658f2cd71d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109d55880>]}
+[0m15:31:17.219295 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd9004cb1-440b-444a-94bb-56658f2cd71d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10930bfa0>]}
+[0m15:31:17.219654 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m15:31:17.241350 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m15:31:17.312635 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:31:17.312901 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:31:17.329192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd9004cb1-440b-444a-94bb-56658f2cd71d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a03f130>]}
+[0m15:31:17.381900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd9004cb1-440b-444a-94bb-56658f2cd71d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a03cc40>]}
+[0m15:31:17.382190 [info ] [MainThread]: Found 2 models, 473 macros
+[0m15:31:17.382380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd9004cb1-440b-444a-94bb-56658f2cd71d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a00f250>]}
+[0m15:31:17.382987 [info ] [MainThread]: 
+[0m15:31:17.383283 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:31:17.383774 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m15:31:17.384006 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:31:17.384235 [debug] [ThreadPool]: BigQuery adapter: Got an error when attempting to create a bigquery client: '[Errno 2] No such file or directory: '/opt/keys/prazos-project-080f299b982e.json''
+[0m15:31:17.384554 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:31:17.384703 [debug] [MainThread]: Connection 'list_prazos-project' was properly closed.
+[0m15:31:17.384858 [info ] [MainThread]: 
+[0m15:31:17.385032 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.00 seconds (0.00s).
+[0m15:31:17.386030 [error] [MainThread]: Encountered an error:
+Database Error
+  [Errno 2] No such file or directory: '/opt/keys/prazos-project-080f299b982e.json'
+[0m15:31:17.387739 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.0036315, "process_user_time": 1.212138, "process_kernel_time": 0.263756, "process_mem_max_rss": "185139200", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:31:17.388164 [debug] [MainThread]: Command `dbt run` failed at 15:31:17.388091 after 1.00 seconds
+[0m15:31:17.388434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102255a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a00b070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a00ba30>]}
+[0m15:31:17.388672 [debug] [MainThread]: Flushing usage events
+[0m15:32:25.878511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10275db50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104429bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104429d90>]}
 
 
-============================== 22:01:34.793523 | a2abfe80-0e6c-46cb-b5a7-8cdd587e152c ==============================
-[0m22:01:34.793523 [info ] [MainThread]: Running with dbt=1.8.4
-[0m22:01:34.794001 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/dbt_project/logs', 'profiles_dir': '/opt/dbt_project', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
-[0m22:01:35.276624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a2abfe80-0e6c-46cb-b5a7-8cdd587e152c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7b6f2070>]}
-[0m22:01:35.301451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a2abfe80-0e6c-46cb-b5a7-8cdd587e152c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7b6c0700>]}
-[0m22:01:35.301949 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m22:01:35.310159 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m22:01:35.380068 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m22:01:35.380814 [debug] [MainThread]: Partial parsing: updated file: prazos_project://models/load_parquet_to_test.sql
-[0m22:01:35.459341 [error] [MainThread]: Encountered an error:
-Compilation Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  expected token ',', got '='
-    line 2
-      --     materialized='table',
-[0m22:01:35.460206 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.6946335, "process_user_time": 2.002519, "process_kernel_time": 0.102975, "process_mem_max_rss": "221416", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m22:01:35.460712 [debug] [MainThread]: Command `dbt run` failed at 22:01:35.460640 after 0.70 seconds
-[0m22:01:35.461090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d019f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9cbff070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff97f922e0>]}
-[0m22:01:35.461426 [debug] [MainThread]: Flushing usage events
-[0m22:01:36.392482 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
-[0m22:04:47.226431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa41c6f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa33a59a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa46733a0>]}
-
-
-============================== 22:04:47.232616 | 83622bf5-8462-4244-8393-acf34a999164 ==============================
-[0m22:04:47.232616 [info ] [MainThread]: Running with dbt=1.8.4
-[0m22:04:47.233390 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/dbt_project/logs', 'profiles_dir': '/opt/dbt_project', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
-[0m22:04:48.010495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '83622bf5-8462-4244-8393-acf34a999164', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8287f160>]}
-[0m22:04:48.040402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '83622bf5-8462-4244-8393-acf34a999164', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa391c8e0>]}
-[0m22:04:48.041068 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m22:04:48.052192 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m22:04:48.146579 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m22:04:48.147178 [debug] [MainThread]: Partial parsing: updated file: prazos_project://models/load_parquet_to_test.sql
-[0m22:04:48.311640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '83622bf5-8462-4244-8393-acf34a999164', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9e841160>]}
-[0m22:04:48.403149 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '83622bf5-8462-4244-8393-acf34a999164', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9e805880>]}
-[0m22:04:48.403701 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m22:04:48.404306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '83622bf5-8462-4244-8393-acf34a999164', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9f2ede50>]}
-[0m22:04:48.405166 [info ] [MainThread]: 
-[0m22:04:48.405605 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m22:04:48.406383 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
-[0m22:04:48.406749 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m22:04:49.275348 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project_prazos_project_dataset'
-[0m22:04:49.276557 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m22:04:49.710373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '83622bf5-8462-4244-8393-acf34a999164', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9f2ede50>]}
-[0m22:04:49.711853 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
-[0m22:04:49.712925 [info ] [MainThread]: 
-[0m22:04:49.722862 [debug] [Thread-1  ]: Began running node model.prazos_project.load_parquet_to_test
-[0m22:04:49.723837 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_project_dataset.load_parquet_to_test ....... [RUN]
-[0m22:04:49.724505 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_project_dataset, now model.prazos_project.load_parquet_to_test)
-[0m22:04:49.724901 [debug] [Thread-1  ]: Began compiling node model.prazos_project.load_parquet_to_test
-[0m22:04:49.730849 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.load_parquet_to_test"
-[0m22:04:49.734138 [debug] [Thread-1  ]: Began executing node model.prazos_project.load_parquet_to_test
-[0m22:04:49.762794 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.load_parquet_to_test"
-[0m22:04:49.764371 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
-[0m22:04:49.800519 [debug] [Thread-1  ]: On model.prazos_project.load_parquet_to_test: /* prazos_project: */
+============================== 15:32:25.881118 | 95404389-6abe-45e4-8ed8-1f04bb203a27 ==============================
+[0m15:32:25.881118 [info ] [MainThread]: Running with dbt=1.8.4
+[0m15:32:25.881451 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/miguelrezende/Documents/prazos_project/dbt_project', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/miguelrezende/Documents/prazos_project/dbt_project/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --models tj_api_data_transformed', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:32:26.538248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '95404389-6abe-45e4-8ed8-1f04bb203a27', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee94250>]}
+[0m15:32:26.565306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '95404389-6abe-45e4-8ed8-1f04bb203a27', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1040d3760>]}
+[0m15:32:26.565659 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m15:32:26.577700 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m15:32:26.640584 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:32:26.640812 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:32:26.656414 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '95404389-6abe-45e4-8ed8-1f04bb203a27', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f2e7130>]}
+[0m15:32:26.704001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '95404389-6abe-45e4-8ed8-1f04bb203a27', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eef7880>]}
+[0m15:32:26.704267 [info ] [MainThread]: Found 2 models, 473 macros
+[0m15:32:26.704457 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '95404389-6abe-45e4-8ed8-1f04bb203a27', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102ae13a0>]}
+[0m15:32:26.705047 [info ] [MainThread]: 
+[0m15:32:26.705339 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:32:26.705808 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m15:32:26.706029 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:32:27.548796 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_trusted)
+[0m15:32:27.549725 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:32:28.175808 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '95404389-6abe-45e4-8ed8-1f04bb203a27', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10efe55e0>]}
+[0m15:32:28.176813 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:32:28.177375 [info ] [MainThread]: 
+[0m15:32:28.181262 [debug] [Thread-1  ]: Began running node model.prazos_project.tj_api_data_transformed
+[0m15:32:28.182154 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_trusted.tj_api_data_transformed ............ [RUN]
+[0m15:32:28.182926 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.tj_api_data_transformed)
+[0m15:32:28.183560 [debug] [Thread-1  ]: Began compiling node model.prazos_project.tj_api_data_transformed
+[0m15:32:28.199692 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.tj_api_data_transformed"
+[0m15:32:28.200827 [debug] [Thread-1  ]: Began executing node model.prazos_project.tj_api_data_transformed
+[0m15:32:28.216505 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:32:28.854487 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.tj_api_data_transformed"
+[0m15:32:28.855102 [debug] [Thread-1  ]: On model.prazos_project.tj_api_data_transformed: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "node_id": "model.prazos_project.tj_api_data_transformed"} */
 
   
     
 
-    create or replace table `prazos-project`.`prazos_project_dataset`.`load_parquet_to_test`
+    create or replace table `prazos-project`.`prazos_trusted`.`tj_api_data_transformed`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_trusted`.`tj_api_data`
+)
+
+SELECT *
+FROM latest_data
+WHERE row_num = 1
+    );
+  
+[0m15:32:29.766165 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:9e505ed9-4ea0-477c-a2be-2b553c265260&page=queryresults
+[0m15:32:32.367021 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '95404389-6abe-45e4-8ed8-1f04bb203a27', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f3d5790>]}
+[0m15:32:32.367455 [info ] [Thread-1  ]: 1 of 1 OK created sql table model prazos_trusted.tj_api_data_transformed ....... [[32mCREATE TABLE (448.0 rows, 202.1 KiB processed)[0m in 4.18s]
+[0m15:32:32.367801 [debug] [Thread-1  ]: Finished running node model.prazos_project.tj_api_data_transformed
+[0m15:32:32.368451 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:32:32.368602 [debug] [MainThread]: Connection 'model.prazos_project.tj_api_data_transformed' was properly closed.
+[0m15:32:32.368754 [info ] [MainThread]: 
+[0m15:32:32.368933 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.66 seconds (5.66s).
+[0m15:32:32.369266 [debug] [MainThread]: Command end result
+[0m15:32:32.388049 [info ] [MainThread]: 
+[0m15:32:32.388354 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:32:32.388529 [info ] [MainThread]: 
+[0m15:32:32.388714 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m15:32:32.389885 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.5450363, "process_user_time": 1.456954, "process_kernel_time": 0.187445, "process_mem_max_rss": "188727296", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:32:32.390188 [debug] [MainThread]: Command `dbt run` succeeded at 15:32:32.390142 after 6.55 seconds
+[0m15:32:32.390383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10275db50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103e14fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eeb20d0>]}
+[0m15:32:32.390574 [debug] [MainThread]: Flushing usage events
+[0m17:13:30.095577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102addaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050a8bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050a8d90>]}
+
+
+============================== 17:13:30.097712 | 1dd54290-934a-439b-be4d-a138ec595434 ==============================
+[0m17:13:30.097712 [info ] [MainThread]: Running with dbt=1.8.4
+[0m17:13:30.098041 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/miguelrezende/Documents/prazos_project/dbt_project', 'log_path': '/Users/miguelrezende/Documents/prazos_project/dbt_project/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --models trusted_tj_api_data', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:13:30.509141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1dd54290-934a-439b-be4d-a138ec595434', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102e13070>]}
+[0m17:13:30.535192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1dd54290-934a-439b-be4d-a138ec595434', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10473bb50>]}
+[0m17:13:30.535522 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m17:13:30.546480 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m17:13:30.613007 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:13:30.613255 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:13:30.616221 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.prazos_trusted
+[0m17:13:30.634125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1dd54290-934a-439b-be4d-a138ec595434', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c73b130>]}
+[0m17:13:30.686434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1dd54290-934a-439b-be4d-a138ec595434', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c705400>]}
+[0m17:13:30.686735 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
+[0m17:13:30.686933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1dd54290-934a-439b-be4d-a138ec595434', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103b81c10>]}
+[0m17:13:30.687550 [info ] [MainThread]: 
+[0m17:13:30.687848 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:13:30.688344 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m17:13:30.688563 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:13:31.604810 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now create_prazos-project_prazos_trusted)
+[0m17:13:31.607142 [debug] [ThreadPool]: Creating schema "database: "prazos-project"
+schema: "prazos_trusted"
+"
+[0m17:13:31.622491 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:13:31.624148 [debug] [ThreadPool]: On create_prazos-project_prazos_trusted: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "connection_name": "create_prazos-project_prazos_trusted"} */
+create schema if not exists `prazos-project`.`prazos_trusted`
+  
+[0m17:13:32.421814 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:8bd50cb1-d6f5-4c30-a78b-0ff72b34ce70&page=queryresults
+[0m17:13:33.553430 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_prazos-project_prazos_trusted, now list_prazos-project_prazos_trusted)
+[0m17:13:33.554586 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:13:34.265603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1dd54290-934a-439b-be4d-a138ec595434', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c82bbb0>]}
+[0m17:13:34.267308 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:13:34.267988 [info ] [MainThread]: 
+[0m17:13:34.273506 [debug] [Thread-1  ]: Began running node model.prazos_project.trusted_tj_api_data
+[0m17:13:34.274547 [info ] [Thread-1  ]: 1 of 1 START sql view model prazos_trusted.trusted_tj_api_data ................. [RUN]
+[0m17:13:34.275357 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.trusted_tj_api_data)
+[0m17:13:34.276089 [debug] [Thread-1  ]: Began compiling node model.prazos_project.trusted_tj_api_data
+[0m17:13:34.289829 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.trusted_tj_api_data"
+[0m17:13:34.290670 [debug] [Thread-1  ]: Began executing node model.prazos_project.trusted_tj_api_data
+[0m17:13:34.315230 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.trusted_tj_api_data"
+[0m17:13:34.315938 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:13:34.317173 [debug] [Thread-1  ]: On model.prazos_project.trusted_tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "node_id": "model.prazos_project.trusted_tj_api_data"} */
+
+
+  create or replace view `prazos-project`.`prazos_trusted`.`trusted_tj_api_data`
+  OPTIONS()
+  as WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_raw`.`tj_api_data`
+)
+
+SELECT *
+FROM latest_data
+WHERE row_num = 1;
+
+
+[0m17:13:35.492629 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:17099fbf-4789-4c40-b7a2-8b37f031cae2&page=queryresults
+[0m17:13:36.244151 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1dd54290-934a-439b-be4d-a138ec595434', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c74f190>]}
+[0m17:13:36.244975 [info ] [Thread-1  ]: 1 of 1 OK created sql view model prazos_trusted.trusted_tj_api_data ............ [[32mCREATE VIEW (0 processed)[0m in 1.97s]
+[0m17:13:36.245576 [debug] [Thread-1  ]: Finished running node model.prazos_project.trusted_tj_api_data
+[0m17:13:36.246670 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:13:36.246926 [debug] [MainThread]: Connection 'model.prazos_project.trusted_tj_api_data' was properly closed.
+[0m17:13:36.247191 [info ] [MainThread]: 
+[0m17:13:36.247471 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 5.56 seconds (5.56s).
+[0m17:13:36.248044 [debug] [MainThread]: Command end result
+[0m17:13:36.273994 [info ] [MainThread]: 
+[0m17:13:36.274326 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:13:36.274528 [info ] [MainThread]: 
+[0m17:13:36.274746 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:13:36.276648 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.216709, "process_user_time": 1.504945, "process_kernel_time": 0.138675, "process_mem_max_rss": "190595072", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:13:36.277131 [debug] [MainThread]: Command `dbt run` succeeded at 17:13:36.277065 after 6.22 seconds
+[0m17:13:36.277394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102addaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c2063a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c705400>]}
+[0m17:13:36.277646 [debug] [MainThread]: Flushing usage events
+[0m17:17:56.305471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10499dac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106764be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106764dc0>]}
+
+
+============================== 17:17:56.307646 | 485dae45-a201-46af-9afa-d96a9861134e ==============================
+[0m17:17:56.307646 [info ] [MainThread]: Running with dbt=1.8.4
+[0m17:17:56.307983 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/miguelrezende/Documents/prazos_project/dbt_project', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/miguelrezende/Documents/prazos_project/dbt_project/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --models trusted_tj_api_data', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:17:56.721667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '485dae45-a201-46af-9afa-d96a9861134e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e6fe7f0>]}
+[0m17:17:56.747583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '485dae45-a201-46af-9afa-d96a9861134e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061ab910>]}
+[0m17:17:56.747933 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m17:17:56.758500 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m17:17:56.825409 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:17:56.825653 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:17:56.828790 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.prazos_trusted
+[0m17:17:56.845667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '485dae45-a201-46af-9afa-d96a9861134e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11eafb130>]}
+[0m17:17:56.897920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '485dae45-a201-46af-9afa-d96a9861134e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11defd4f0>]}
+[0m17:17:56.898246 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
+[0m17:17:56.898456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '485dae45-a201-46af-9afa-d96a9861134e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046f08b0>]}
+[0m17:17:56.899038 [info ] [MainThread]: 
+[0m17:17:56.899330 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:17:56.899830 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m17:17:56.900056 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:17:57.541983 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_trusted)
+[0m17:17:57.543342 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:17:58.257981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '485dae45-a201-46af-9afa-d96a9861134e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e8d8b50>]}
+[0m17:17:58.260173 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:17:58.260671 [info ] [MainThread]: 
+[0m17:17:58.264064 [debug] [Thread-1  ]: Began running node model.prazos_project.trusted_tj_api_data
+[0m17:17:58.264996 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_trusted.trusted_tj_api_data ................ [RUN]
+[0m17:17:58.265785 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.trusted_tj_api_data)
+[0m17:17:58.266429 [debug] [Thread-1  ]: Began compiling node model.prazos_project.trusted_tj_api_data
+[0m17:17:58.281582 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.trusted_tj_api_data"
+[0m17:17:58.282314 [debug] [Thread-1  ]: Began executing node model.prazos_project.trusted_tj_api_data
+[0m17:17:58.314038 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.trusted_tj_api_data"
+[0m17:17:58.314582 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:17:58.315637 [debug] [Thread-1  ]: On model.prazos_project.trusted_tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "node_id": "model.prazos_project.trusted_tj_api_data"} */
+
+  
+    
+
+    create or replace table `prazos-project`.`prazos_trusted`.`trusted_tj_api_data`
       
     
     
@@ -475,98 +337,77 @@ Compilation Error in model load_parquet_to_test (models/load_parquet_to_test.sql
     as (
       
 
-SELECT 1 as test_column;
+WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_raw`.`tj_api_data`
+)
+
+SELECT *
+FROM latest_data
+WHERE row_num = 1
     );
   
-[0m22:04:50.492655 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:77530055-dfbf-4085-b61c-6aa9353c2b47&page=queryresults
-[0m22:04:50.493253 [debug] [Thread-1  ]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('Syntax error: Expected ")" but got ";" at [15:24]; reason: invalidQuery, location: query, message: Syntax error: Expected ")" but got ";" at [15:24]')
-[0m22:04:51.076546 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:609b938f-54a9-470a-b53f-69ac2925b756&page=queryresults
-[0m22:04:51.079430 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:609b938f-54a9-470a-b53f-69ac2925b756&page=queryresults
-[0m22:04:51.096241 [debug] [Thread-1  ]: Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [15:24]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m22:04:51.101630 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '83622bf5-8462-4244-8393-acf34a999164', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9dd2bb20>]}
-[0m22:04:51.102670 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model prazos_project_dataset.load_parquet_to_test  [[31mERROR[0m in 1.38s]
-[0m22:04:51.103533 [debug] [Thread-1  ]: Finished running node model.prazos_project.load_parquet_to_test
-[0m22:04:51.104746 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m22:04:51.105041 [debug] [MainThread]: Connection 'list_prazos-project' was properly closed.
-[0m22:04:51.105330 [debug] [MainThread]: Connection 'model.prazos_project.load_parquet_to_test' was properly closed.
-[0m22:04:51.105627 [info ] [MainThread]: 
-[0m22:04:51.106035 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 2.70 seconds (2.70s).
-[0m22:04:51.106602 [debug] [MainThread]: Command end result
-[0m22:04:51.233706 [info ] [MainThread]: 
-[0m22:04:51.237847 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
-[0m22:04:51.241151 [info ] [MainThread]: 
-[0m22:04:51.245922 [error] [MainThread]:   Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [15:24]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m22:04:51.248143 [info ] [MainThread]: 
-[0m22:04:51.248981 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
-[0m22:04:51.251927 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.0566525, "process_user_time": 2.969638, "process_kernel_time": 0.344781, "process_mem_max_rss": "224516", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
-[0m22:04:51.253474 [debug] [MainThread]: Command `dbt run` failed at 22:04:51.253304 after 4.06 seconds
-[0m22:04:51.256614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa41c6f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9e85d4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa33bf100>]}
-[0m22:04:51.258763 [debug] [MainThread]: Flushing usage events
-[0m22:31:21.652244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff817c7f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff81c27d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff81c31640>]}
-[0m22:31:21.652241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9c5c5fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9d2f4a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9ca2fd90>]}
+[0m17:17:59.485739 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:6517af2c-7a90-40df-b811-cee79b994401&page=queryresults
+[0m17:18:02.178262 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '485dae45-a201-46af-9afa-d96a9861134e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11ebf6a00>]}
+[0m17:18:02.179163 [info ] [Thread-1  ]: 1 of 1 OK created sql table model prazos_trusted.trusted_tj_api_data ........... [[32mCREATE TABLE (448.0 rows, 202.1 KiB processed)[0m in 3.91s]
+[0m17:18:02.180018 [debug] [Thread-1  ]: Finished running node model.prazos_project.trusted_tj_api_data
+[0m17:18:02.181238 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:18:02.181554 [debug] [MainThread]: Connection 'model.prazos_project.trusted_tj_api_data' was properly closed.
+[0m17:18:02.181848 [info ] [MainThread]: 
+[0m17:18:02.182138 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.28 seconds (5.28s).
+[0m17:18:02.182738 [debug] [MainThread]: Command end result
+[0m17:18:02.209025 [info ] [MainThread]: 
+[0m17:18:02.209379 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:18:02.209578 [info ] [MainThread]: 
+[0m17:18:02.209786 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:18:02.211078 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.937829, "process_user_time": 1.452632, "process_kernel_time": 0.142115, "process_mem_max_rss": "188645376", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:18:02.211536 [debug] [MainThread]: Command `dbt run` succeeded at 17:18:02.211459 after 5.94 seconds
+[0m17:18:02.211790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10499dac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b42c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050bfeb0>]}
+[0m17:18:02.212036 [debug] [MainThread]: Flushing usage events
+[0m17:21:01.340870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ac9ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10657cbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10657cdc0>]}
 
 
-============================== 22:31:21.656265 | 5ab8b7b2-7120-4bf6-91e2-5ce783baf35a ==============================
-[0m22:31:21.656265 [info ] [MainThread]: Running with dbt=1.8.4
-
-
-============================== 22:31:21.656384 | 0b0c1de1-29d9-46b1-a33a-22be6a3ab080 ==============================
-[0m22:31:21.656384 [info ] [MainThread]: Running with dbt=1.8.4
-[0m22:31:21.656966 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m22:31:21.657019 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/opt/dbt_project/logs', 'debug': 'False', 'profiles_dir': '/opt/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir /opt/dbt_project --models load_parquet_to_test', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
-[0m22:31:22.480583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0b0c1de1-29d9-46b1-a33a-22be6a3ab080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9c374bb0>]}
-[0m22:31:22.480584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5ab8b7b2-7120-4bf6-91e2-5ce783baf35a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff5fe81040>]}
-[0m22:31:22.508341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5ab8b7b2-7120-4bf6-91e2-5ce783baf35a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff5fe81070>]}
-[0m22:31:22.508676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0b0c1de1-29d9-46b1-a33a-22be6a3ab080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9ca2f1f0>]}
-[0m22:31:22.508985 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m22:31:22.509236 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
-[0m22:31:22.522453 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m22:31:22.523236 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
-[0m22:31:22.619067 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
-[0m22:31:22.619066 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
-[0m22:31:22.619492 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
-[0m22:31:22.619581 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
-[0m22:31:22.639515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0b0c1de1-29d9-46b1-a33a-22be6a3ab080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff976098e0>]}
-[0m22:31:22.639575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5ab8b7b2-7120-4bf6-91e2-5ce783baf35a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c80b820>]}
-[0m22:31:22.710516 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5ab8b7b2-7120-4bf6-91e2-5ce783baf35a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c78bfd0>]}
-[0m22:31:22.710602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0b0c1de1-29d9-46b1-a33a-22be6a3ab080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff975888b0>]}
-[0m22:31:22.710964 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m22:31:22.711026 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
-[0m22:31:22.711454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5ab8b7b2-7120-4bf6-91e2-5ce783baf35a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c8f2790>]}
-[0m22:31:22.711545 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0b0c1de1-29d9-46b1-a33a-22be6a3ab080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff976efc40>]}
-[0m22:31:22.712190 [info ] [MainThread]: 
-[0m22:31:22.712314 [info ] [MainThread]: 
-[0m22:31:22.712608 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m22:31:22.712752 [debug] [MainThread]: Acquiring new bigquery connection 'master'
-[0m22:31:22.713296 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
-[0m22:31:22.713401 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
-[0m22:31:22.713630 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m22:31:22.713728 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m22:31:23.670691 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_project_dataset)
-[0m22:31:23.674091 [debug] [ThreadPool]: Opening a new connection, currently in state closed
-[0m22:31:24.025320 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_project_dataset)
-[0m22:31:24.026581 [debug] [ThreadPool]: Opening a new connection, currently in state closed
-[0m22:31:24.085763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5ab8b7b2-7120-4bf6-91e2-5ce783baf35a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c776fa0>]}
-[0m22:31:24.086442 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
-[0m22:31:24.087037 [info ] [MainThread]: 
-[0m22:31:24.091749 [debug] [Thread-1  ]: Began running node model.prazos_project.load_parquet_to_test
-[0m22:31:24.092374 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_project_dataset.load_parquet_to_test ....... [RUN]
-[0m22:31:24.092928 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_project_dataset, now model.prazos_project.load_parquet_to_test)
-[0m22:31:24.093308 [debug] [Thread-1  ]: Began compiling node model.prazos_project.load_parquet_to_test
-[0m22:31:24.099473 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.load_parquet_to_test"
-[0m22:31:24.102165 [debug] [Thread-1  ]: Began executing node model.prazos_project.load_parquet_to_test
-[0m22:31:24.125256 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.load_parquet_to_test"
-[0m22:31:24.127768 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
-[0m22:31:24.164707 [debug] [Thread-1  ]: On model.prazos_project.load_parquet_to_test: /* prazos_project: */
+============================== 17:21:01.343024 | 5bfccac4-a36a-42ed-947f-c813f9d556e6 ==============================
+[0m17:21:01.343024 [info ] [MainThread]: Running with dbt=1.8.4
+[0m17:21:01.343345 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/miguelrezende/Documents/prazos_project/dbt_project/logs', 'debug': 'False', 'profiles_dir': '/Users/miguelrezende/Documents/prazos_project/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --models trusted_tj_api_data', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:21:01.751910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5bfccac4-a36a-42ed-947f-c813f9d556e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d006a0>]}
+[0m17:21:01.777763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5bfccac4-a36a-42ed-947f-c813f9d556e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11dd6c6d0>]}
+[0m17:21:01.778094 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m17:21:01.789609 [debug] [MainThread]: checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a, vars: {}, profile: , target: , version: 1.8.4
+[0m17:21:01.854492 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:21:01.854727 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:21:01.857728 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.prazos_trusted
+[0m17:21:01.875079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5bfccac4-a36a-42ed-947f-c813f9d556e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e07b130>]}
+[0m17:21:01.927010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5bfccac4-a36a-42ed-947f-c813f9d556e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11de33a30>]}
+[0m17:21:01.927296 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
+[0m17:21:01.927502 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5bfccac4-a36a-42ed-947f-c813f9d556e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105959c10>]}
+[0m17:21:01.928080 [info ] [MainThread]: 
+[0m17:21:01.928402 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:21:01.928915 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m17:21:01.929128 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:21:02.743282 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_trusted)
+[0m17:21:02.745502 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:21:03.400090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5bfccac4-a36a-42ed-947f-c813f9d556e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e225c70>]}
+[0m17:21:03.401878 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:21:03.402510 [info ] [MainThread]: 
+[0m17:21:03.406744 [debug] [Thread-1  ]: Began running node model.prazos_project.trusted_tj_api_data
+[0m17:21:03.407809 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_trusted.trusted_tj_api_data ................ [RUN]
+[0m17:21:03.408584 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.trusted_tj_api_data)
+[0m17:21:03.409160 [debug] [Thread-1  ]: Began compiling node model.prazos_project.trusted_tj_api_data
+[0m17:21:03.427346 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.trusted_tj_api_data"
+[0m17:21:03.428217 [debug] [Thread-1  ]: Began executing node model.prazos_project.trusted_tj_api_data
+[0m17:21:03.461169 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.trusted_tj_api_data"
+[0m17:21:03.461713 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:21:03.462835 [debug] [Thread-1  ]: On model.prazos_project.trusted_tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile", "target_name": "dev", "node_id": "model.prazos_project.trusted_tj_api_data"} */
 
   
     
 
-    create or replace table `prazos-project`.`prazos_project_dataset`.`load_parquet_to_test`
+    create or replace table `prazos-project`.`prazos_trusted`.`trusted_tj_api_data`
       
     
     
@@ -575,26 +416,79 @@ SELECT 1 as test_column;
     as (
       
 
-SELECT 1 as test_column;
+WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_raw`.`tj_api_data`
+)
+
+SELECT
+    * EXCEPT(row_num)
+FROM latest_data
+WHERE row_num = 1
     );
   
-[0m22:31:24.411301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0b0c1de1-29d9-46b1-a33a-22be6a3ab080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff975510d0>]}
-[0m22:31:24.411901 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
-[0m22:31:24.412394 [info ] [MainThread]: 
-[0m22:31:24.416770 [debug] [Thread-1  ]: Began running node model.prazos_project.load_parquet_to_test
-[0m22:31:24.417335 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_project_dataset.load_parquet_to_test ....... [RUN]
-[0m22:31:24.417785 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_project_dataset, now model.prazos_project.load_parquet_to_test)
-[0m22:31:24.418149 [debug] [Thread-1  ]: Began compiling node model.prazos_project.load_parquet_to_test
-[0m22:31:24.424387 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.load_parquet_to_test"
-[0m22:31:24.425502 [debug] [Thread-1  ]: Began executing node model.prazos_project.load_parquet_to_test
-[0m22:31:24.451577 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.load_parquet_to_test"
-[0m22:31:24.462969 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
-[0m22:31:24.555282 [debug] [Thread-1  ]: On model.prazos_project.load_parquet_to_test: /* prazos_project: */
+[0m17:21:04.628788 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:203ea7d4-628f-49bf-8805-707719c2436f&page=queryresults
+[0m17:21:07.933381 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bfccac4-a36a-42ed-947f-c813f9d556e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e270f40>]}
+[0m17:21:07.934169 [info ] [Thread-1  ]: 1 of 1 OK created sql table model prazos_trusted.trusted_tj_api_data ........... [[32mCREATE TABLE (448.0 rows, 202.1 KiB processed)[0m in 4.52s]
+[0m17:21:07.934914 [debug] [Thread-1  ]: Finished running node model.prazos_project.trusted_tj_api_data
+[0m17:21:07.936040 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:21:07.936297 [debug] [MainThread]: Connection 'model.prazos_project.trusted_tj_api_data' was properly closed.
+[0m17:21:07.936560 [info ] [MainThread]: 
+[0m17:21:07.936840 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 6.01 seconds (6.01s).
+[0m17:21:07.937412 [debug] [MainThread]: Command end result
+[0m17:21:07.962189 [info ] [MainThread]: 
+[0m17:21:07.962531 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:21:07.962742 [info ] [MainThread]: 
+[0m17:21:07.963047 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:21:07.964419 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.657257, "process_user_time": 1.452934, "process_kernel_time": 0.142772, "process_mem_max_rss": "189530112", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:21:07.964799 [debug] [MainThread]: Command `dbt run` succeeded at 17:21:07.964742 after 6.66 seconds
+[0m17:21:07.965037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ac9ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f784c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d006a0>]}
+[0m17:21:07.965275 [debug] [MainThread]: Flushing usage events
+[0m21:33:18.084917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff94a8bee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92fa9730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92fa9f10>]}
+
+
+============================== 21:33:18.088666 | 48816b03-eaa5-44a0-9dec-6ef5d87ff2ef ==============================
+[0m21:33:18.088666 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:33:18.089063 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/opt/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --profile prazos_profile_airflow --models trusted_tj_api_data', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:33:18.546482 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff72087fd0>]}
+[0m21:33:18.571570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff71b0b6a0>]}
+[0m21:33:18.571984 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m21:33:18.582257 [debug] [MainThread]: checksum: 3221022f3914960f84234e3937bb24bd71b45e78ecd28011ed6a93664d5ec422, vars: {}, profile: prazos_profile_airflow, target: , version: 1.8.4
+[0m21:33:18.675133 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m21:33:18.675644 [debug] [MainThread]: previous checksum: 3221022f3914960f84234e3937bb24bd71b45e78ecd28011ed6a93664d5ec422, current checksum: 54398663eddc8e4ac172fdab397e09b2aa6984947a84e6ec7983096c3fae7b7a
+[0m21:33:18.676020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff93c488b0>]}
+[0m21:33:19.267030 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.prazos_trusted
+[0m21:33:19.273538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8eeccf70>]}
+[0m21:33:19.331172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8ee8fd90>]}
+[0m21:33:19.331547 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
+[0m21:33:19.331855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8ee29e50>]}
+[0m21:33:19.332636 [info ] [MainThread]: 
+[0m21:33:19.333119 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m21:33:19.333778 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m21:33:19.334051 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:33:20.280797 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project_prazos_trusted'
+[0m21:33:20.282263 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:33:20.998983 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8eda9b50>]}
+[0m21:33:21.000807 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:33:21.001859 [info ] [MainThread]: 
+[0m21:33:21.015830 [debug] [Thread-1  ]: Began running node model.prazos_project.trusted_tj_api_data
+[0m21:33:21.016754 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_trusted.trusted_tj_api_data ................ [RUN]
+[0m21:33:21.017623 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.trusted_tj_api_data)
+[0m21:33:21.018209 [debug] [Thread-1  ]: Began compiling node model.prazos_project.trusted_tj_api_data
+[0m21:33:21.028364 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.trusted_tj_api_data"
+[0m21:33:21.031477 [debug] [Thread-1  ]: Began executing node model.prazos_project.trusted_tj_api_data
+[0m21:33:21.044168 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:33:21.746366 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.trusted_tj_api_data"
+[0m21:33:21.749923 [debug] [Thread-1  ]: On model.prazos_project.trusted_tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile_airflow", "target_name": "dev", "node_id": "model.prazos_project.trusted_tj_api_data"} */
 
   
     
 
-    create or replace table `prazos-project`.`prazos_project_dataset`.`load_parquet_to_test`
+    create or replace table `prazos-project`.`prazos_trusted`.`trusted_tj_api_data`
       
     
     
@@ -603,60 +497,274 @@ SELECT 1 as test_column;
     as (
       
 
-SELECT 1 as test_column;
+WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_raw`.`tj_api_data`
+)
+
+SELECT
+    * EXCEPT(row_num)
+FROM latest_data
+WHERE row_num = 1
     );
   
-[0m22:31:24.812449 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:e8402637-67f3-4b9c-a609-43ec9d4550ce&page=queryresults
-[0m22:31:24.813400 [debug] [Thread-1  ]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('Syntax error: Expected ")" but got ";" at [15:24]; reason: invalidQuery, location: query, message: Syntax error: Expected ")" but got ";" at [15:24]')
-[0m22:31:25.230824 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:571400d7-287c-4306-8656-f466b3792292&page=queryresults
-[0m22:31:25.231377 [debug] [Thread-1  ]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('Syntax error: Expected ")" but got ";" at [15:24]; reason: invalidQuery, location: query, message: Syntax error: Expected ")" but got ";" at [15:24]')
-[0m22:31:25.883013 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:83c21048-3910-44ec-b3c9-103be321a66f&page=queryresults
-[0m22:31:25.883628 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:83c21048-3910-44ec-b3c9-103be321a66f&page=queryresults
-[0m22:31:25.890404 [debug] [Thread-1  ]: Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [15:24]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m22:31:25.891577 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5ab8b7b2-7120-4bf6-91e2-5ce783baf35a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c6b6040>]}
-[0m22:31:25.892151 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model prazos_project_dataset.load_parquet_to_test  [[31mERROR[0m in 1.80s]
-[0m22:31:25.892833 [debug] [Thread-1  ]: Finished running node model.prazos_project.load_parquet_to_test
-[0m22:31:25.893963 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m22:31:25.894256 [debug] [MainThread]: Connection 'model.prazos_project.load_parquet_to_test' was properly closed.
-[0m22:31:25.894528 [info ] [MainThread]: 
-[0m22:31:25.894838 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 3.18 seconds (3.18s).
-[0m22:31:25.895319 [debug] [MainThread]: Command end result
-[0m22:31:25.922316 [info ] [MainThread]: 
-[0m22:31:25.922766 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
-[0m22:31:25.923039 [info ] [MainThread]: 
-[0m22:31:25.923329 [error] [MainThread]:   Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [15:24]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m22:31:25.923599 [info ] [MainThread]: 
-[0m22:31:25.923932 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
-[0m22:31:25.924539 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.299055, "process_user_time": 2.138423, "process_kernel_time": 0.157809, "process_mem_max_rss": "222460", "process_in_blocks": "74120", "command_success": false, "process_out_blocks": "0"}
-[0m22:31:25.924957 [debug] [MainThread]: Command `dbt run` failed at 22:31:25.924897 after 4.30 seconds
-[0m22:31:25.925273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff817c7f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c78b1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff809bdf40>]}
-[0m22:31:25.925573 [debug] [MainThread]: Flushing usage events
-[0m22:31:26.497244 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:05078770-0a0e-4fdd-ae58-c7e732395f45&page=queryresults
-[0m22:31:26.497889 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:05078770-0a0e-4fdd-ae58-c7e732395f45&page=queryresults
-[0m22:31:26.499633 [debug] [Thread-1  ]: Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [15:24]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m22:31:26.500724 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0b0c1de1-29d9-46b1-a33a-22be6a3ab080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9746e7c0>]}
-[0m22:31:26.501228 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model prazos_project_dataset.load_parquet_to_test  [[31mERROR[0m in 2.08s]
-[0m22:31:26.501721 [debug] [Thread-1  ]: Finished running node model.prazos_project.load_parquet_to_test
-[0m22:31:26.502516 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m22:31:26.502788 [debug] [MainThread]: Connection 'model.prazos_project.load_parquet_to_test' was properly closed.
-[0m22:31:26.503091 [info ] [MainThread]: 
-[0m22:31:26.503432 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 3.79 seconds (3.79s).
-[0m22:31:26.503914 [debug] [MainThread]: Command end result
-[0m22:31:26.528743 [info ] [MainThread]: 
-[0m22:31:26.529166 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
-[0m22:31:26.529433 [info ] [MainThread]: 
-[0m22:31:26.529751 [error] [MainThread]:   Database Error in model load_parquet_to_test (models/load_parquet_to_test.sql)
-  Syntax error: Expected ")" but got ";" at [15:24]
-  compiled Code at target/run/prazos_project/models/load_parquet_to_test.sql
-[0m22:31:26.530008 [info ] [MainThread]: 
-[0m22:31:26.530306 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
-[0m22:31:26.531026 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.905524, "process_user_time": 2.204365, "process_kernel_time": 0.145221, "process_mem_max_rss": "222452", "process_in_blocks": "69944", "command_success": false, "process_out_blocks": "0"}
-[0m22:31:26.531620 [debug] [MainThread]: Command `dbt run` failed at 22:31:26.531560 after 4.91 seconds
-[0m22:31:26.531982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9c5c5fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff97588fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9b7baca0>]}
-[0m22:31:26.532445 [debug] [MainThread]: Flushing usage events
+[0m21:33:22.470637 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:0b293ce2-ee99-4aa0-82cd-20775816779e&page=queryresults
+[0m21:33:25.446384 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48816b03-eaa5-44a0-9dec-6ef5d87ff2ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8e3907c0>]}
+[0m21:33:25.447418 [info ] [Thread-1  ]: 1 of 1 OK created sql table model prazos_trusted.trusted_tj_api_data ........... [[32mCREATE TABLE (448.0 rows, 283.0 KiB processed)[0m in 4.43s]
+[0m21:33:25.448235 [debug] [Thread-1  ]: Finished running node model.prazos_project.trusted_tj_api_data
+[0m21:33:25.449725 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:33:25.450152 [debug] [MainThread]: Connection 'list_prazos-project' was properly closed.
+[0m21:33:25.450526 [debug] [MainThread]: Connection 'model.prazos_project.trusted_tj_api_data' was properly closed.
+[0m21:33:25.450940 [info ] [MainThread]: 
+[0m21:33:25.451429 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 6.12 seconds (6.12s).
+[0m21:33:25.452260 [debug] [MainThread]: Command end result
+[0m21:33:25.482360 [info ] [MainThread]: 
+[0m21:33:25.482834 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:33:25.483153 [info ] [MainThread]: 
+[0m21:33:25.483483 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m21:33:25.484135 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 7.424827, "process_user_time": 2.908714, "process_kernel_time": 0.117149, "process_mem_max_rss": "224072", "process_in_blocks": "12464", "process_out_blocks": "0"}
+[0m21:33:25.484599 [debug] [MainThread]: Command `dbt run` succeeded at 21:33:25.484529 after 7.43 seconds
+[0m21:33:25.484998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff94a8bee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff71b0b6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8ee8fe20>]}
+[0m21:33:25.485306 [debug] [MainThread]: Flushing usage events
+[0m21:39:29.899319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1c3ef70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa140f7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa0e4e0d0>]}
+
+
+============================== 21:39:29.902678 | 226e5717-7a97-4438-8c91-f1da4505c175 ==============================
+[0m21:39:29.902678 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:39:29.903234 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/dbt_project/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --profile prazos_profile_airflow', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:39:30.310528 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '226e5717-7a97-4438-8c91-f1da4505c175', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa01abdf0>]}
+[0m21:39:30.336606 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '226e5717-7a97-4438-8c91-f1da4505c175', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7ec27a30>]}
+[0m21:39:30.337109 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m21:39:30.346419 [debug] [MainThread]: checksum: 3221022f3914960f84234e3937bb24bd71b45e78ecd28011ed6a93664d5ec422, vars: {}, profile: prazos_profile_airflow, target: , version: 1.8.4
+[0m21:39:30.457651 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:39:30.458046 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:39:30.461036 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.prazos_trusted
+[0m21:39:30.478067 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '226e5717-7a97-4438-8c91-f1da4505c175', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9cae8040>]}
+[0m21:39:30.537108 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '226e5717-7a97-4438-8c91-f1da4505c175', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9ca8de80>]}
+[0m21:39:30.537607 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
+[0m21:39:30.538044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '226e5717-7a97-4438-8c91-f1da4505c175', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9caf1f40>]}
+[0m21:39:30.539000 [info ] [MainThread]: 
+[0m21:39:30.539514 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m21:39:30.540176 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m21:39:30.540492 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:39:31.167032 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_trusted)
+[0m21:39:31.168062 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:39:31.893998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '226e5717-7a97-4438-8c91-f1da4505c175', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9ca9ff70>]}
+[0m21:39:31.896175 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:39:31.898036 [info ] [MainThread]: 
+[0m21:39:31.910367 [debug] [Thread-1  ]: Began running node model.prazos_project.trusted_tj_api_data
+[0m21:39:31.911601 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_trusted.trusted_tj_api_data ................ [RUN]
+[0m21:39:31.912864 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.trusted_tj_api_data)
+[0m21:39:31.913581 [debug] [Thread-1  ]: Began compiling node model.prazos_project.trusted_tj_api_data
+[0m21:39:31.925700 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.trusted_tj_api_data"
+[0m21:39:31.928871 [debug] [Thread-1  ]: Began executing node model.prazos_project.trusted_tj_api_data
+[0m21:39:31.946032 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:39:32.623644 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.trusted_tj_api_data"
+[0m21:39:32.625872 [debug] [Thread-1  ]: On model.prazos_project.trusted_tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile_airflow", "target_name": "dev", "node_id": "model.prazos_project.trusted_tj_api_data"} */
+
+  
+    
+
+    create or replace table `prazos-project`.`prazos_trusted`.`trusted_tj_api_data`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_raw`.`tj_api_data`
+)
+
+SELECT
+    * EXCEPT(row_num)
+FROM latest_data
+WHERE row_num = 1
+    );
+  
+[0m21:39:33.531390 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:856e2b3a-79ba-4ef9-b4bf-d92cbf3bdc70&page=queryresults
+[0m21:39:36.122986 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '226e5717-7a97-4438-8c91-f1da4505c175', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9c99d940>]}
+[0m21:39:36.124180 [info ] [Thread-1  ]: 1 of 1 OK created sql table model prazos_trusted.trusted_tj_api_data ........... [[32mCREATE TABLE (448.0 rows, 404.3 KiB processed)[0m in 4.21s]
+[0m21:39:36.125422 [debug] [Thread-1  ]: Finished running node model.prazos_project.trusted_tj_api_data
+[0m21:39:36.127144 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:39:36.127690 [debug] [MainThread]: Connection 'model.prazos_project.trusted_tj_api_data' was properly closed.
+[0m21:39:36.128238 [info ] [MainThread]: 
+[0m21:39:36.128883 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.59 seconds (5.59s).
+[0m21:39:36.129717 [debug] [MainThread]: Command end result
+[0m21:39:36.163475 [info ] [MainThread]: 
+[0m21:39:36.163929 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:39:36.164216 [info ] [MainThread]: 
+[0m21:39:36.164494 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m21:39:36.165102 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.2919264, "process_user_time": 2.408679, "process_kernel_time": 0.100319, "process_mem_max_rss": "211860", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:39:36.165577 [debug] [MainThread]: Command `dbt run` succeeded at 21:39:36.165509 after 6.29 seconds
+[0m21:39:36.165949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1c3ef70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa0df8730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9ca8df40>]}
+[0m21:39:36.166271 [debug] [MainThread]: Flushing usage events
+[0m21:40:42.470591 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb58b0fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb3d8c1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb3d8cd30>]}
+
+
+============================== 21:40:42.474059 | 6343f63b-c223-405a-861f-a7968fe31f67 ==============================
+[0m21:40:42.474059 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:40:42.474656 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/opt/dbt_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profile prazos_profile_airflow', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:40:42.921910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6343f63b-c223-405a-861f-a7968fe31f67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb3d81730>]}
+[0m21:40:42.948472 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6343f63b-c223-405a-861f-a7968fe31f67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92846ac0>]}
+[0m21:40:42.948975 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m21:40:42.957825 [debug] [MainThread]: checksum: 3221022f3914960f84234e3937bb24bd71b45e78ecd28011ed6a93664d5ec422, vars: {}, profile: prazos_profile_airflow, target: , version: 1.8.4
+[0m21:40:43.064251 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:40:43.064671 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:40:43.067752 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.prazos_trusted
+[0m21:40:43.084513 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6343f63b-c223-405a-861f-a7968fe31f67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb0718370>]}
+[0m21:40:43.142662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6343f63b-c223-405a-861f-a7968fe31f67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb06fdf10>]}
+[0m21:40:43.143036 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
+[0m21:40:43.143387 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6343f63b-c223-405a-861f-a7968fe31f67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb0721e80>]}
+[0m21:40:43.144255 [info ] [MainThread]: 
+[0m21:40:43.144726 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m21:40:43.145387 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m21:40:43.145705 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:40:43.805979 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_trusted)
+[0m21:40:43.808977 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:40:44.419760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6343f63b-c223-405a-861f-a7968fe31f67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb0672760>]}
+[0m21:40:44.420329 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:40:44.421149 [info ] [MainThread]: 
+[0m21:40:44.425839 [debug] [Thread-1  ]: Began running node model.prazos_project.trusted_tj_api_data
+[0m21:40:44.426329 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_trusted.trusted_tj_api_data ................ [RUN]
+[0m21:40:44.426822 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.trusted_tj_api_data)
+[0m21:40:44.427206 [debug] [Thread-1  ]: Began compiling node model.prazos_project.trusted_tj_api_data
+[0m21:40:44.433348 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.trusted_tj_api_data"
+[0m21:40:44.435904 [debug] [Thread-1  ]: Began executing node model.prazos_project.trusted_tj_api_data
+[0m21:40:44.447897 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:40:45.117777 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.trusted_tj_api_data"
+[0m21:40:45.119301 [debug] [Thread-1  ]: On model.prazos_project.trusted_tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile_airflow", "target_name": "dev", "node_id": "model.prazos_project.trusted_tj_api_data"} */
+
+  
+    
+
+    create or replace table `prazos-project`.`prazos_trusted`.`trusted_tj_api_data`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_raw`.`tj_api_data`
+)
+
+SELECT
+    * EXCEPT(row_num)
+FROM latest_data
+WHERE row_num = 1
+    );
+  
+[0m21:40:45.923172 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:4d50b372-6196-46c3-96ed-566bc1cbb061&page=queryresults
+[0m21:40:48.914719 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6343f63b-c223-405a-861f-a7968fe31f67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb06cba90>]}
+[0m21:40:48.915774 [info ] [Thread-1  ]: 1 of 1 OK created sql table model prazos_trusted.trusted_tj_api_data ........... [[32mCREATE TABLE (448.0 rows, 404.3 KiB processed)[0m in 4.49s]
+[0m21:40:48.917387 [debug] [Thread-1  ]: Finished running node model.prazos_project.trusted_tj_api_data
+[0m21:40:48.919168 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:40:48.919898 [debug] [MainThread]: Connection 'model.prazos_project.trusted_tj_api_data' was properly closed.
+[0m21:40:48.920549 [info ] [MainThread]: 
+[0m21:40:48.921342 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.78 seconds (5.78s).
+[0m21:40:48.922308 [debug] [MainThread]: Command end result
+[0m21:40:48.956884 [info ] [MainThread]: 
+[0m21:40:48.957471 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:40:48.957774 [info ] [MainThread]: 
+[0m21:40:48.958073 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m21:40:48.958799 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.5156446, "process_user_time": 2.367933, "process_kernel_time": 0.126584, "process_mem_max_rss": "215480", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:40:48.959300 [debug] [MainThread]: Command `dbt run` succeeded at 21:40:48.959229 after 6.52 seconds
+[0m21:40:48.959678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb58b0fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb0672430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff92846ac0>]}
+[0m21:40:48.960006 [debug] [MainThread]: Flushing usage events
+[0m21:42:31.505908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8821cfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff889da700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8678a580>]}
+
+
+============================== 21:42:31.509784 | 3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c ==============================
+[0m21:42:31.509784 [info ] [MainThread]: Running with dbt=1.8.4
+[0m21:42:31.510354 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt_project', 'debug': 'False', 'warn_error': 'None', 'log_path': '/opt/dbt_project/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profile prazos_profile_airflow', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:42:31.895728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6929df70>]}
+[0m21:42:31.920630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff691e4eb0>]}
+[0m21:42:31.921108 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m21:42:31.929753 [debug] [MainThread]: checksum: 3221022f3914960f84234e3937bb24bd71b45e78ecd28011ed6a93664d5ec422, vars: {}, profile: prazos_profile_airflow, target: , version: 1.8.4
+[0m21:42:32.035639 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:42:32.036044 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:42:32.039183 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.prazos_trusted
+[0m21:42:32.055689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff830c83d0>]}
+[0m21:42:32.113921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8306cf70>]}
+[0m21:42:32.114297 [info ] [MainThread]: Found 1 model, 1 source, 473 macros
+[0m21:42:32.114709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff830d1f10>]}
+[0m21:42:32.115676 [info ] [MainThread]: 
+[0m21:42:32.116114 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m21:42:32.116773 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_prazos-project'
+[0m21:42:32.117075 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:42:32.835949 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prazos-project, now list_prazos-project_prazos_trusted)
+[0m21:42:32.837821 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:42:33.446234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff82fe56a0>]}
+[0m21:42:33.447331 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:42:33.448322 [info ] [MainThread]: 
+[0m21:42:33.456208 [debug] [Thread-1  ]: Began running node model.prazos_project.trusted_tj_api_data
+[0m21:42:33.456999 [info ] [Thread-1  ]: 1 of 1 START sql table model prazos_trusted.trusted_tj_api_data ................ [RUN]
+[0m21:42:33.457748 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_prazos-project_prazos_trusted, now model.prazos_project.trusted_tj_api_data)
+[0m21:42:33.458287 [debug] [Thread-1  ]: Began compiling node model.prazos_project.trusted_tj_api_data
+[0m21:42:33.467076 [debug] [Thread-1  ]: Writing injected SQL for node "model.prazos_project.trusted_tj_api_data"
+[0m21:42:33.469718 [debug] [Thread-1  ]: Began executing node model.prazos_project.trusted_tj_api_data
+[0m21:42:33.483733 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:42:34.198497 [debug] [Thread-1  ]: Writing runtime sql for node "model.prazos_project.trusted_tj_api_data"
+[0m21:42:34.200606 [debug] [Thread-1  ]: On model.prazos_project.trusted_tj_api_data: /* {"app": "dbt", "dbt_version": "1.8.4", "profile_name": "prazos_profile_airflow", "target_name": "dev", "node_id": "model.prazos_project.trusted_tj_api_data"} */
+
+  
+    
+
+    create or replace table `prazos-project`.`prazos_trusted`.`trusted_tj_api_data`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH latest_data AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY city, year, date, type ORDER BY timestamp DESC) AS row_num
+    FROM `prazos-project`.`prazos_raw`.`tj_api_data`
+)
+
+SELECT
+    * EXCEPT(row_num)
+FROM latest_data
+WHERE row_num = 1
+    );
+  
+[0m21:42:34.941100 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=prazos-project&j=bq:US:2771a768-74e0-4a81-8cba-43199570793d&page=queryresults
+[0m21:42:37.675688 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3fa96be8-3a0c-45e6-87cf-6d2d8b07e86c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8303d9d0>]}
+[0m21:42:37.676745 [info ] [Thread-1  ]: 1 of 1 OK created sql table model prazos_trusted.trusted_tj_api_data ........... [[32mCREATE TABLE (448.0 rows, 404.3 KiB processed)[0m in 4.22s]
+[0m21:42:37.677844 [debug] [Thread-1  ]: Finished running node model.prazos_project.trusted_tj_api_data
+[0m21:42:37.679342 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:42:37.679779 [debug] [MainThread]: Connection 'model.prazos_project.trusted_tj_api_data' was properly closed.
+[0m21:42:37.680254 [info ] [MainThread]: 
+[0m21:42:37.680851 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.56 seconds (5.56s).
+[0m21:42:37.681595 [debug] [MainThread]: Command end result
+[0m21:42:37.712969 [info ] [MainThread]: 
+[0m21:42:37.713441 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:42:37.713785 [info ] [MainThread]: 
+[0m21:42:37.714091 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m21:42:37.714683 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.2338367, "process_user_time": 2.334633, "process_kernel_time": 0.0979, "process_mem_max_rss": "213048", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:42:37.715165 [debug] [MainThread]: Command `dbt run` succeeded at 21:42:37.715110 after 6.23 seconds
+[0m21:42:37.715498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8821cfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff691e4520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff86777e50>]}
+[0m21:42:37.715829 [debug] [MainThread]: Flushing usage events

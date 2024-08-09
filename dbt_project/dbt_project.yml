@@ -1,22 +1,35 @@
+
 name: 'prazos_project'
 version: '1.0'
-
 config-version: 2
 
-profile: 'prazos_project'
-
-# Configurações globais para todos os modelos neste projeto
-model-paths: ["models"]
+profile: "{{ env_var('DBT_PROFILE', 'prazos_profile_local') }}"
 
 models:
-  prazos_project:
-    materialized: 'table'
+  prazos_trusted:
+    +materialized: table
 
-# Você pode definir caminhos adicionais, como macros ou análises, se necessário
-macro-paths: ["macros"]
 
-# Configurações específicas para BigQuery
-query-comment: "{{ project_name }}: {{ job_trigger }}"
+# name: 'prazos_project'
+# version: '1.0'
+# config-version: 2
 
-# Configurações de compilação e execução do dbt
-require-dbt-version: [">=1.0.0"]
+# profile: 'prazos_profile'
+
+
+# # Diretório de modelos
+# models:
+#   prazos_trusted:
+#     +materialized: table
+
+
+# # target-path: 'target'
+# clean-targets:
+#   - 'target'
+
+# models:
+#   prazos_project:
+#     prazos_raw:
+#       materialized: view
+#     prazos_trusted:
+#       materialized: table

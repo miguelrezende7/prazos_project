@@ -1,0 +1,1 @@
+SELECT * FROM `prazos-project.prazos_raw.tj_api_data`

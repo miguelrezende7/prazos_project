@@ -1,11 +1,37 @@
-prazos_project:
+prazos_profile_local:
+  target: dev
   outputs:
     dev:
       type: bigquery
       method: service-account
-      project: 'prazos-project'
-      dataset: 'prazos_project_dataset'
-      keyfile: '/opt/airflow/keys/prazos-project-080f299b982e.json'
-      threads: 1
-      timeout_seconds: 300
+      project: prazos-project
+      dataset: prazos_trusted
+      keyfile: '/Users/miguelrezende/Documents/prazos_project/keys/prazos-project-080f299b982e.json'
+      threads: 4
+      location: US
+
+prazos_profile_airflow:
   target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: prazos-project
+      dataset: prazos_trusted
+      keyfile: '/opt/keys/prazos-project-080f299b982e.json'
+      threads: 4
+      location: US
+
+
+# prazos_profile:
+#   target: dev
+#   outputs:
+#     dev:
+#       type: bigquery
+#       method: service-account
+#       project: prazos-project
+#       dataset: prazos_trusted
+#       # keyfile: '/opt/keys/prazos-project-080f299b982e.json'
+#       keyfile: '/Users/miguelrezende/Documents/prazos_project/keys/prazos-project-080f299b982e.json'
+#       threads: 4
+#       location: US

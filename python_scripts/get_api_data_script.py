@@ -94,7 +94,7 @@ def save_parquet_to_gcs(df: pd.DataFrame):
     parquet_filename = current_date.strftime('%H%M%S') + '_file.parquet'
     parquet_path = bucket_base_path + parquet_folder + parquet_filename
     # credentials_path = '/Users/miguelrezende/Documents/prazos_project/keys/prazos-project-080f299b982e.json'
-    credentials_path = '/opt/airflow/keys/prazos-project-080f299b982e.json'
+    credentials_path = '/opt/keys/prazos-project-080f299b982e.json'
     
     try:
         print(f'Saving file: {parquet_path} in Google Cloud Storage')
@@ -129,6 +129,8 @@ def main():
                     
                 except Exception as e:
                     print(f'Error getting data from API: \nEndpoint: {endpoint}\nCity: {city}\nYear: {year}\n')                  
+
+    df['timestamp'] = df['timestamp'] = datetime.datetime.now().isoformat()
 
     save_parquet_to_gcs(df)
 
