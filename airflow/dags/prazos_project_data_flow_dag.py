@@ -30,22 +30,28 @@ dag = DAG(
 script_path_get_api_data = "/opt/python_scripts/get_api_data_script.py"
 script_path_create_external_bigquery_tables = "/opt/python_scripts/create_external_bigquery_tables.py"
 
-# Criando uma tarefa para executar o script Python usando o BashOperator
+
+# Python script execution tasks 
 get_api_data = BashOperator(
     task_id='get_api_data',
     bash_command=f'python3 {script_path_get_api_data} 2>&1',
     dag=dag,
 )
 
+# Python script execution tasks 
 create_external_bigquery_tables = BashOperator(
     task_id='create_external_bigquery_tables',
     bash_command=f'python3 {script_path_create_external_bigquery_tables} 2>&1',
     dag=dag,
 )
 
-dbt_run = BashOperator(
+# DBT SQL script execution tasks 
+dbt_run = DbtRunOperator(
     task_id='dbt_run',
-    bash_command='cd /opt/dbt_project/ && dbt run --profile prazos_profile_airflow',
+    dir='/opt/dbt_project/',  
+    profiles_dir='/opt/dbt_project/',  
+    models='prazos_trusted',  
+    target='dev', 
     dag=dag,
 )
 

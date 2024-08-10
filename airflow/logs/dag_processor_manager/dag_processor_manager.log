@@ -13879,3 +13879,359 @@ File Path                                          PID    Runtime      # DAGs   
 [2024-08-09T21:45:28.461+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
 [2024-08-09T21:45:28.471+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
 [2024-08-09T21:45:47.657+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2024-08-10T22:58:49.747+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2024-08-10T22:58:49.747+0000] {manager.py:471} INFO - Process each file at most once every 5 seconds
+[2024-08-10T22:58:49.747+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 20 seconds
+[2024-08-10T22:58:49.748+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T22:58:49.754+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T22:59:10.015+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T22:59:10.024+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T22:59:11.061+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           0           1  0.03s           2024-08-10T22:59:10
+================================================================================
+[2024-08-10T22:59:30.241+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T22:59:30.252+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T22:59:41.413+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           0           1  0.05s           2024-08-10T22:59:40
+================================================================================
+[2024-08-10T22:59:50.540+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T22:59:50.543+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:00:10.730+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:00:10.739+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:00:11.771+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           0           1  0.04s           2024-08-10T23:00:10
+================================================================================
+[2024-08-10T23:00:30.989+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:00:30.992+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:00:42.164+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           0           1  0.05s           2024-08-10T23:00:41
+================================================================================
+[2024-08-10T23:00:51.271+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:00:51.280+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:01:11.537+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:01:11.548+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:01:12.582+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           0           1  0.04s           2024-08-10T23:01:11
+================================================================================
+[2024-08-10T23:01:31.814+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:01:31.823+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:01:42.984+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           0           1  0.05s           2024-08-10T23:01:42
+================================================================================
+[2024-08-10T23:01:52.075+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:01:52.084+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:02:12.381+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:02:12.394+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:02:13.422+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.11s           2024-08-10T23:02:10
+================================================================================
+[2024-08-10T23:02:32.741+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:02:32.749+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:02:43.931+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:02:40
+================================================================================
+[2024-08-10T23:02:53.151+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:02:53.158+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:03:13.561+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:03:13.571+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:03:14.596+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.08s           2024-08-10T23:03:11
+================================================================================
+[2024-08-10T23:03:33.937+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:03:33.947+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:03:45.102+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.06s           2024-08-10T23:03:42
+================================================================================
+[2024-08-10T23:03:54.321+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:03:54.325+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:04:14.709+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:04:14.720+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:04:15.740+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:04:12
+================================================================================
+[2024-08-10T23:04:35.098+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:04:35.107+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:04:46.281+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:04:43
+================================================================================
+[2024-08-10T23:04:55.494+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:04:55.504+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:05:15.904+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:05:15.909+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:05:16.928+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.08s           2024-08-10T23:05:13
+================================================================================
+[2024-08-10T23:05:36.334+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:05:36.345+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:05:47.509+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:05:44
+================================================================================
+[2024-08-10T23:05:56.707+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:05:56.715+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:06:17.092+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:06:17.100+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:06:18.120+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.08s           2024-08-10T23:06:15
+================================================================================
+[2024-08-10T23:06:37.488+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:06:37.497+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:06:48.682+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.08s           2024-08-10T23:06:45
+================================================================================
+[2024-08-10T23:06:57.904+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:06:57.914+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:07:18.250+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:07:18.256+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:07:19.273+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:07:16
+================================================================================
+[2024-08-10T23:07:38.632+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:07:38.635+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:07:49.839+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.05s           2024-08-10T23:07:46
+================================================================================
+[2024-08-10T23:07:59.052+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:07:59.062+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:08:19.443+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:08:19.453+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:08:20.478+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.05s           2024-08-10T23:08:17
+================================================================================
+[2024-08-10T23:08:39.847+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:08:39.850+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:08:51.044+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.05s           2024-08-10T23:08:48
+================================================================================
+[2024-08-10T23:09:00.233+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:09:00.242+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:09:20.674+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:09:20.679+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:09:21.691+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.06s           2024-08-10T23:09:18
+================================================================================
+[2024-08-10T23:09:41.105+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:09:41.115+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:09:52.339+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.08s           2024-08-10T23:09:49
+================================================================================
+[2024-08-10T23:10:01.543+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:10:01.548+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:10:21.867+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:10:21.871+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:10:22.886+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.05s           2024-08-10T23:10:18
+================================================================================
+[2024-08-10T23:10:42.221+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:10:42.232+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:10:53.415+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.08s           2024-08-10T23:10:49
+================================================================================
+[2024-08-10T23:11:02.620+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:11:02.629+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:11:23.044+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:11:23.051+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:11:24.064+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:11:20
+================================================================================
+[2024-08-10T23:11:43.446+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:11:43.454+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:11:54.674+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:11:50
+================================================================================
+[2024-08-10T23:12:03.907+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:12:03.914+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:12:24.305+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:12:24.315+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:12:25.330+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.08s           2024-08-10T23:12:21
+================================================================================
+[2024-08-10T23:12:44.746+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:12:44.756+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:12:55.924+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:12:51
+================================================================================
+[2024-08-10T23:13:05.097+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:13:05.104+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:13:25.544+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:13:25.553+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:13:26.577+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:13:22
+================================================================================
+[2024-08-10T23:13:45.908+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:13:45.911+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:13:57.103+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.07s           2024-08-10T23:13:53
+================================================================================
+[2024-08-10T23:14:06.303+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:14:06.311+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:14:26.622+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:14:26.634+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:14:27.654+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.05s           2024-08-10T23:14:23
+================================================================================
+[2024-08-10T23:14:46.922+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-08-10T23:14:46.928+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-08-10T23:14:58.102+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/prazos_project_data_flow_dag.py                           1           0  0.05s           2024-08-10T23:14:54
+================================================================================
+[2024-08-10T23:15:01.388+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15

@@ -3,33 +3,8 @@ name: 'prazos_project'
 version: '1.0'
 config-version: 2
 
-profile: "{{ env_var('DBT_PROFILE', 'prazos_profile_local') }}"
+profile: "{{ env_var('DBT_PROFILE', 'prazos_profile_airflow') }}"
 
 models:
   prazos_trusted:
     +materialized: table
-
-
-# name: 'prazos_project'
-# version: '1.0'
-# config-version: 2
-
-# profile: 'prazos_profile'
-
-
-# # Diretório de modelos
-# models:
-#   prazos_trusted:
-#     +materialized: table
-
-
-# # target-path: 'target'
-# clean-targets:
-#   - 'target'
-
-# models:
-#   prazos_project:
-#     prazos_raw:
-#       materialized: view
-#     prazos_trusted:
-#       materialized: table
