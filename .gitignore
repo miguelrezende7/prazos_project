@@ -3,3 +3,4 @@ logs/
 airflow/logs
 dbt_project/logs
 dbt_project/target
+*.pyc
