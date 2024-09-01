@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import datetime
+from constants.api_constants import *
 
 ################################################################################
 # AUX FUNCTIONS 
@@ -77,8 +78,6 @@ def get_data_from_api(city:str, year:str, endpoint:str ='feriados') -> dict:
 
     if response.status_code == 200:
         dados = response.json()
-        
-          
         return dados
 
     else:
@@ -105,9 +104,16 @@ def save_parquet_to_gcs(df: pd.DataFrame):
 
 def main():
 
-    city_list = ['Suzano','Mogi das Cruzes']
-    year_list = ['2023','2024']
-    endpoint_type_list = ['feriados', 'suspensoes']
+    # NEXT IMPLEMENTATIONS 
+    # Try next year if avaliable
+    # DEV environment
+    # More try/except for API and other methods
+    # Use Terraform or K8s to deploy the whole application
+
+    
+    current_year = str(datetime.datetime.now().year)
+    year_list = [current_year]
+    
     df = pd.DataFrame()
    
     print('Getting data from API')
@@ -128,13 +134,13 @@ def main():
                         df = pd.concat([df,df_current],axis=0)
                     
                 except Exception as e:
-                    print(f'Error getting data from API: \nEndpoint: {endpoint}\nCity: {city}\nYear: {year}\n')                  
+                    print(f'Error getting data from API: \nEndpoint: {endpoint}\nCity: {city}\nYear: {year}\n{e}')               
 
     df['timestamp'] = df['timestamp'] = datetime.datetime.now().isoformat()
-
-    save_parquet_to_gcs(df)
-
-
+    
+    if len(df)>0:
+        save_parquet_to_gcs(df)
+        
 
 if __name__ == "__main__":
     main()

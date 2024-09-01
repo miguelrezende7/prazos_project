@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
-from airflow_dbt.operators.dbt_operator import DbtRunOperator
+from airflow_dbt.operators.dbt_operator import DbtRunOperator, DbtTestOperator
 
 from datetime import datetime,timedelta
 import sys
@@ -55,7 +55,15 @@ dbt_run = DbtRunOperator(
     dag=dag,
 )
 
+dbt_test = DbtTestOperator(
+    task_id='dbt_test',
+    dir='/opt/dbt_project/',  
+    profiles_dir='/opt/dbt_project/',  
+    target='dev',
+    dag=dag,
+)
+
 
 # Tasks Execution
-create_external_bigquery_tables >> get_api_data >> dbt_run
+create_external_bigquery_tables >> get_api_data >> dbt_run >> dbt_test
 

@@ -21,17 +21,3 @@ prazos_profile_airflow:
       keyfile: '/opt/keys/prazos-project-080f299b982e.json'
       threads: 4
       location: US
-
-
-# prazos_profile:
-#   target: dev
-#   outputs:
-#     dev:
-#       type: bigquery
-#       method: service-account
-#       project: prazos-project
-#       dataset: prazos_trusted
-#       # keyfile: '/opt/keys/prazos-project-080f299b982e.json'
-#       keyfile: '/Users/miguelrezende/Documents/prazos_project/keys/prazos-project-080f299b982e.json'
-#       threads: 4
-#       location: US
